@@ -1,4 +1,4 @@
-import Demo from "./Demo";
+
 
 const App = () => {
   return (
@@ -7,8 +7,8 @@ const App = () => {
       <input type="text" placeholder="Enter your name" name="" id="" />
       <button>Submit</button>
       
-      <Demo/> {/* Import another functional component */}
-    </div>
+    
+     </div>
   );
 };
 
