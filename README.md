@@ -66,7 +66,27 @@
 - Rast development
 - Design consistency
 - Maintainability (update just one component & get result in all spaces realted to this component)
+
+
+## JSX
+- JSX is a syntax extension for JavaScript
+- JSX stands for JavaScript XML
+- Lets you write HTML- like markup inside a JavaScript file.
+- Under the hood it is transformed into regular JavaScript using compilers like Bable or TypeScript
+
+#### Rules of JSX
+- Return a single root element
+    - To return multiple elements from a component, wrap them with a single parent tag.
+- Close all the tags
+- Must use camelCase
+    - class --> className
+    - onclick --> onClick
+    - tabindex --> tabIndex
+
+
+
 </details>
+
 
 # Start React with Vite
 
