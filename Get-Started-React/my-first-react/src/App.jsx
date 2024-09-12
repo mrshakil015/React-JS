@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -10,12 +10,21 @@ function App() {
     <>
       
       <h1>Vite + React</h1>
+      <Device name="Laptop" price="45k"></Device>
       <Person></Person>
       <Student></Student>
+      <Developer></Developer>
       
     </>
   )
 }
+
+function Device(props){
+  console.log(props)
+  return <h2>This device: {props.name} Price: {props.price} </h2>
+}
+
+
 function Person(){
   const age=25;
   const person ={name: 'sakib', age:12};
@@ -25,12 +34,29 @@ function Person(){
 
 function Student() {
   return (
-  <div>
+  <div className = 'student'>
     <h3>This is a student</h3>
     <p>Name:</p>
     <p>Age:</p>
   </div>
   )
 }
+
+function Developer() {
+  const developerStyle = {
+    margin: '20px',
+    padding: '20px',
+    border: '2px solid purple',
+    borderRadius: '10px'
+  }
+  return (
+    <div style={developerStyle}>
+      <h5>Developer</h5>
+      <p>Coding</p>
+    </div>
+  )
+}
+
+
 
 export default App
