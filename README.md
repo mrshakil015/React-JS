@@ -87,6 +87,145 @@
 
 </details>
 
+<details>
+<summary>About Props</summary>
+
+## What are Props?
+- React components use props to communicate with each other.
+- Every parent component can pass some information to its child components by giving them props.
+- You can pass any JavaScript value through props, including objects, arrays and functions.
+- Props are unidirectional
+- Props are Immutablep
+
+#### Set value into the component using props
+```jsx
+// Main Function
+    function FunctionName() {
+        return (
+            <>
+                ...
+                ...
+                <Device name="Laptop" price="45k"></Device>
+                ....
+            </>
+        )
+    }
+
+// Component
+    function Device(props){
+        return (
+            <h2>Device Name: {props.name} and Price: {props.price}
+        )
+    }
+```
+#### Specifying a Default value for a Prop
+```jsx
+    function Avatar({person, size}){
+        //.....
+    }
+```
+
+#### Different values of Props
+```jsx
+    // 1. String literals
+    <MyComponent prop="My String value"/>
+    // 2. Template literals with variables
+    <MyComponent prop={'My String value ${myVariable}'}/>
+
+    // 3. Number literals
+    <MyComponent prop={42} />
+
+    // 4.Boolean literals
+    <MyComponent prop={fallse} />
+
+    // 5. Plain Obj. literals
+    <MyComponent prop={{property: 'Value'}} />
+
+    // 6.Array literals
+    <MyComponent prop={['Item_1','Item_2']} />
+
+    // 7. JSX
+    <MyComponent prop={<Message who="Joker" />}/>
+
+    // 8. Variables having any kind of value
+    <MyComponent prop={myVariable}/>
+```
+
+#### Forwarding Props with JSX Spread Syntax
+Without spread syntax(it's a repetitive way)
+
+```jsx
+    function Profile({person, size, isSepia}){
+        return(
+            <div className="card">
+                <Avatar
+                    person={person}
+                    size={size}
+                    isSepia={isSepia}
+                />
+            </div>
+        );
+    }
+```
+
+With spread syntax
+```jsx
+function Profile(props){
+    retrun (
+        <div className="card">
+            <Avatar {...props}/>
+        </div>
+    );
+}
+
+```
+
+</details>
+
+### Set value into the component using props
+```jsx
+// Main Function
+    function FunctionName() {
+        return (
+            <>
+                ...
+                ...
+                <Device name="Laptop" price="45k"></Device>
+                ....
+            </>
+        )
+    }
+
+// Component
+    function Device(props){
+        return (
+            <h2>Device Name: {props.name} and Price: {props.price}
+        )
+    }
+```
+
+### Set value into the component using destructing
+```jsx
+// Main Function
+    function FunctionName() {
+        return (
+            <>
+                ...
+                ...
+                <Device name="Laptop" price="45k"></Device>
+                ....
+            </>
+        )
+    }
+
+// Component
+    function Device({name, price}){
+        return (
+            <h2>Device Name: {name} and Price: {price}
+        )
+    }
+```
+
 
 # Start React with Vite
 
