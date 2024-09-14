@@ -182,6 +182,49 @@ function Profile(props){
 
 </details>
 
+<details>
+<summary>File Export & Import<summary>
+
+If we want to access any file components or information we need to export and import file.
+- At first create a new file and add `export default` at the begining of the function:
+    ```jsx
+    export default function Todo(){
+        return(
+                <li>Accessing File</li>
+            )
+        }
+    ```
+- Import the file into main `App.jsx` file to access the information:
+    ```jsx
+    import FileName from './FileName';
+    ```
+
+</details>
+
+<details>
+<summary>React Rendering</summary>
+
+#### Conditional Rendering Option:1
+```jsx
+// Todo.jsx
+export default function Todo({task, isDone}){
+    if(isDone === true){
+        return <li>Finished: {task}</li>
+    }
+    else{
+        return <li>Work On: {task}</li>
+    }
+}
+```
+```jsx
+// App.jsx
+<Todo task="Core Concepts" isDone={true}></Todo>
+<Todo task="Try JSX" isDone={false}></Todo>
+```
+
+</summary>
+
+
 ### Set value into the component using props
 ```jsx
 // Main Function

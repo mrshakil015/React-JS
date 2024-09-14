@@ -2,6 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
+import Todo from './Todo';
 
 function App() {
 
@@ -10,11 +11,28 @@ function App() {
     <>
       
       <h1>Vite + React</h1>
+      <Todo 
+        task="Learn React"
+        isDone={true}>
+      </Todo>
+      <Todo 
+        task="Core Concepts"
+        isDone={true}>
+      </Todo>
+      <Todo 
+        task="Try JSX"
+        isDone={false}>
+      </Todo>
+
+{/*       
+      <Todo task="Core Concepts"></Todo>
+      <Todo task="Try JSX"></Todo>
+
       <Device name="Laptop" price="45k"></Device>
       <Device name="Laptop" price="45k"></Device>
       <Person></Person>
       <Student name='Rohim' grade='7th'></Student>
-      <Developer></Developer>
+      <Developer></Developer> */}
       
     </>
   )
@@ -33,8 +51,7 @@ function Person(){
   return <h3>I am {person.name} a person with age:{age}</h3>
 }
 
-function Student({name, 
-  grade}) {
+function Student({name, grade}) {
   return (
   <div className = 'student'>
     <h3>This is a student</h3>
