@@ -183,7 +183,8 @@ function Profile(props){
 </details>
 
 <details>
-<summary>File Export & Import<summary>
+
+<summary>File Export & Import</summary>
 
 If we want to access any file components or information we need to export and import file.
 - At first create a new file and add `export default` at the begining of the function:
@@ -204,9 +205,25 @@ If we want to access any file components or information we need to export and im
 <details>
 <summary>React Rendering</summary>
 
-#### Conditional Rendering Option:1
+### Conditional Rendering
+- Conditional rendering is the process of displaying different content based on certain conditions or states.
+- It allows you to create dynamic user interfaces that cn adapt to changes in data nad user interactions.
+
+#### Why Conditional Rendering?
+- Imporved User Experience: Conditional rendering allows you to create dynamic user interfaces by showing and hiding content based on the user's actions or the application state.
+- Improved Performance: By conditionally rendering content, apps work faster byonly showing what's needed and improve the performance of your application.
+- Simplified Code: By using conditional statements you can decide what content should be rendered, you can avoid duplicating code and create more modular components.
+- Flexibility: By rendering different content based on the application state, you can create components that can be used in different contexts and adapt to different user interactions.
+
+```jsx
+// App.jsx
+<Todo task="Core Concepts" isDone={true}></Todo>
+<Todo task="Try JSX" isDone={false}></Todo>
+```
+### Conditional Rendering with if statement:
 ```jsx
 // Todo.jsx
+// ------Conditional rendering option: 1
 export default function Todo({task, isDone}){
     if(isDone === true){
         return <li>Finished: {task}</li>
@@ -217,9 +234,39 @@ export default function Todo({task, isDone}){
 }
 ```
 ```jsx
-// App.jsx
-<Todo task="Core Concepts" isDone={true}></Todo>
-<Todo task="Try JSX" isDone={false}></Todo>
+// Todo.jsx
+// ------Conditional rendering option: 2
+export default function Todo({task, isDone}){
+    if(isDone === true){
+        return <li>Finished: {task}</li>
+    }
+    return <li>Work On: {task}</li>
+}
+```
+### Conditional Rendering with ternary operator (?:):
+```jsx
+// Todo.jsx
+// ------Conditional rendering option: 3
+export default function Todo({task, isDone}){
+    return (
+        <li> {isDone ? 'Finished': 'Work on'}: {task} </li>   
+    )
+}
+```
+### Conditional Rendering with logical operator(&&,||):
+```jsx
+// ------Conditional rendering option: 4 && (behive like true)
+export default function Todo({task, isDone}){
+    return(
+        <li>{task} {isDone && ': Done'}</li>
+    )
+}
+// ------Conditional rendering option: 5 || (behive like false)
+export default function Todo({task, isDone}){
+    return(
+        <li>{task} {isDone || ': Do it'}</li>
+    )
+}
 ```
 
 </summary>
