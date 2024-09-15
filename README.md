@@ -361,3 +361,62 @@ export default function Todo({task, isDone}){
         )
     }
 ```
+</details>
+
+<details>
+<summary>Event Handling</summary>
+
+React lets you add event handlers to your JSX. Event handlers are your own functions that will be triggered in response to interactions like clicking, hovering, focusing form inputs etc.
+Example:
+```jsx
+<button onClick={myFunction}>Button Name</button>
+
+```
+
+### Adding Event Handler:
+```jsx
+// Event handling way -1
+export default function Button() {
+    function handleClick() {
+        alert('You clicked me!');
+    }
+
+    return (
+        <button onClick={handleClick}>Click Me</button>
+    );
+}
+
+```
+```jsx
+// Inline Event handler in JSX
+<button onClick={function handleClick(){
+    alert('You clicked me!');
+    }}>
+    Click me</button>
+```
+```jsx
+<button onClick={() =>{
+    alert('You clicked me!');
+}}>Click me!</button>
+```
+
+### Rules of Adding Event Handler
+- **Event handler functions:**
+    - Are usually defined inside your componets.
+    - Have names that start with handle, followed by the name of the event.
+- **By convention,** it is common to name event handlers as handle followed by the event name:
+    - onClick = {handleClick}
+    - onMouseEnter = {handleMouseEnter}
+
+**`Note:`** Functions passed to event handlers must be passed, not called!
+Example:
+```jsx
+// passing a function - use it
+<button onClick={handleClick}>Click me</button>
+```
+```jsx
+// calling a function - not use it
+<button onClick={handleClick()}>Click me</button>
+```
+
+</details>
