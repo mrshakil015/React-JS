@@ -482,7 +482,7 @@ Hooks were first introduced in React 16.8. Hooks let you use different React fea
                 connection.connect();
                 return () => connection.disconnect();
             }, [roomId]);
-            //..............
+            //.............. 
         }
     ```
 </details>
@@ -523,5 +523,83 @@ Variable do not preserve data between renders and cannto tigger React to render.
 - Toggle flags (true/false)
 - Counter
 - Store API data in state
+
+</details>
+
+<details>
+<summary>React useEffect</summary>
+
+### What are Effects?
+There are two types of logic inside React components:
+- `Rendering code:` lives at the top level ofyour component. This is where you take the props and state, transform them, and returnthe JSX you want to see on the screen.
+- `Event handlers:` An event handler might update an input field, submit an HTTP POST request to buy a product, or navigate the user to another screen.
+
+Event handler contain "side effects" (they change the program's state) caused by a specific user action (for example, a button click or typing).
+
+### What are side effects in react?
+- Not predictable
+- Actions which are performed with the "outside world"
+- A side effect is performed when we need to reach outside the scope of our current react components to do something.
+- React component rendering and side-effect logic are independent
+
+### Some common side effects-
+- Making a request to an API for data from a backend server
+- To interect with browser APIs (that is, to use document or window directly)/ Manipulating DOM directly
+- Using unpredictable timing functions like setTimeout() or setInterval()
+- Reading data from local storage
+
+### What is useEffect?
+userEffect exists-
+- To synchronize a component with an external system
+- To provide a way to handle performing these side effects
+- Doesn't affect the rendering or performance of the component that it's in
+- Performs asynchronous task
+![useEffect](./Readme-Image/useEffect.png)
+
+### How to write an Effect
+To write an Effect, follow these three steps:
+1. `**Declare an Effect**` By default, your Effect will run after every render. To declare an Effect in your component, import the useEffect Hook from React
+    ```jsx
+    import {useEffect} from 'react';
+    ```
+    - Then call it at the top level of your component and put some code inside your Effect:
+    ```jsx
+    function MyComponent(){
+        useEffect(() => {
+            // code here will run after every render
+        });
+        return <div/>;
+    }
+    ```
+2. `**Specify the Effect dependencies.**` Most Effects should only re-run when needed rather than after every render. For example, a fade-in animation should only trigger whena component appears.
+3. `**Add cleanup if needed.**` Some effects need to specify how to stop , undo, or clean up whatevr they were doing. For example, "connect" needs "disconnect".
+
+### Different types of dependency in useEffect
+1. Runs after every render
+    ```jsx
+    useEffect(() => {
+        // This runs after every render
+    })
+    ```
+2. Runs only once after initial render
+    ```jsx
+    useEffect(() =>{
+        //Runs only once after initial render
+    },[]);
+    ```
+3. Runs on mount and also if either a or b have change since the last render
+    ```jsx
+    useEffect(() =>{
+        /* This runs on mount *and also* 
+        if either a or b have changed
+        since the last render*/
+    },[a,b]);
+    ```
+
+### What is useEffect cleanup function?
+- The useEffect cleanup allows us to tidy up our code before our component unmounts.
+- When our code runs and results for every render, useEffect also cleans up after itself using the cleanup function.
+- The cleanup function prevents memory leaks and removes some unnecessary and unwanted behaviors.
+- Prevent unwanted behaviors and optimizes application performance.
 
 </details>
