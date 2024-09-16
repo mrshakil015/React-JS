@@ -420,3 +420,108 @@ Example:
 ```
 
 </details>
+
+<details>
+<summary>React Hook</summary>
+
+### What are react hooks?
+Hooks were first introduced in React 16.8. Hooks let you use different React feaatures from your components. You can either use the build-in Hooks or combine them to build your own.
+
+### Rules of Hooks
+
+![Hooks](./Readme-Image/react-hook.jpg)
+
+### Different Types of Hooks
+- State hooks
+- Context hooks
+- Ref hooks
+- Effect hooks
+- Performance hooks
+- Other
+
+### State hooks
+- State lets a component "remember" information like user input.
+- To add state to a component, use one of these Hooks:
+    - `useState`declares a state variable that you can update directly.
+    - `useReducer` declares a state variable with the update logic inside a reducer functin.
+    ```jsx
+        function ImageGallery(){
+            const [index, setIndex] = useState(0);
+            // ...........
+        }
+    ```
+
+### Context hooks
+- Context lets a component receive information from distat parents without passing it as props.
+- useContext reads and subscribes to a context
+    ```jsx
+        function Button(){
+            const theme = useContext(ThemeContext);
+            // ...........
+        }
+    ```
+
+### Ref hooks
+- Refs let a component hold some information that isn't used for rendering, lie a DOM node or a timeout ID.
+- useRef declares a ref. You can hold any value in ti, but most often it's used to hold a DOM node.
+    ```jsx
+        function Form(){
+            const inputRef = useRef(null);
+            // ...........
+        }
+    ```
+
+### Effect hooks
+- Effects let a component connect to and synchronize with external systems. This includes dealing with network, browser DOM, animations, widgets written using a different UI library, and other non-React code.
+- useEffect connects a component to an external system.
+
+    ```jsx
+        function chatRoom({roomId}){
+            useEffect(() => {
+                const connection = createConnection(roomId);
+                connection.connect();
+                return () => connection.disconnect();
+            }, [roomId]);
+            //..............
+        }
+    ```
+</details>
+
+<details>
+<summary>React  useState()</summary>
+
+### What exactly is state?
+- Components often need to change what's on the scree as a result of an interaction.
+- Typing into the form should update the input field, clicking, "next" on an image carousel should change which image is displayed, clicking "buy" should put a product in the shopping cart.
+- Components need to "remember" things: the current input value, the current image, the shopping cart. In React, this kind of component-specific memory is called state.
+
+### How to write a useState Hook
+The useState hook provides those two things:
+- A state variable to retain the data between renders.
+- A state setter function to update the variable and trigger React to render the component again.
+
+    ![useState](./Readme-Image/useState%20hook.jpeg)
+
+```jsx
+    const [counter, setCounter] = useState(0);
+    const clickHandlerIncrease = () => {
+        const newCount = counter + 1;
+        setCounter(newCount);
+    }
+```
+
+### Why useState() is needed?
+To update a component with new data, two things need to happen:
+- Retain the data between renders.
+- Trigger React to render the component with new data(re-rendering).
+
+Variable do not preserve data between renders and cannto tigger React to render. Hense, useState is needed as it preserves data since it is a memeroy as well trigger React to render with teh help of setter function.
+
+### 5 use cases of useState()
+- State management
+- Conditional rendering
+- Toggle flags (true/false)
+- Counter
+- Store API data in state
+
+</details>
