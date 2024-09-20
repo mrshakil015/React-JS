@@ -366,6 +366,8 @@ export default function Todo({task, isDone}){
 <details>
 <summary>Event Handling</summary>
 
+### Event Handling
+
 React lets you add event handlers to your JSX. Event handlers are your own functions that will be triggered in response to interactions like clicking, hovering, focusing form inputs etc.
 Example:
 ```jsx
