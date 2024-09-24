@@ -647,3 +647,20 @@ After rendering (calling) your components, React will modify the DOM.
 React only changes the DOM nodes if there's a difference between renders.
 
 </details>
+
+<details>
+<summary>Thinking in React way</summary>
+
+### When you build a user interface with React-
+**Step-1:** Break it apart into pices called components.
+**Step-2:** Describe the different visual states for each of the components.
+**Step-3:** Connect the components together so that the data flows through them.
+
+All Steps:
+**Step-1:** Break the UI into a component hierarchy
+**Step-2:** Build a static version in React
+**Step-3:** Find the minimal but componet representation of UI state
+**Step-4:** Identify where your state should live
+**Step-5:** Add inverse data flow
+
+</details>
