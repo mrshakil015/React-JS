@@ -605,3 +605,45 @@ To write an Effect, follow these three steps:
 - Prevent unwanted behaviors and optimizes application performance.
 
 </details>
+
+<details>
+<summary>Trigger, Render an Commit in React</summary>
+
+## What does Render means?
+- Before your components are displayed on screen, they must be rendered by React.
+- "Rendering" means that React is calling your component, which is a function.
+
+### Trigger, render and commit
+Imagine that your componets are cooks in the kitchen. In this scenario, React is the waiter who puts in requeests from customers and brings them their orders. This process of requesting and serving UI has three steps:
+
+1. Triggering a render(delivering the guest's order to the kitchen)
+2. Rendering the componet(preparing the order in the kitchen)
+3. Committing to the DOM(placing the order on the table)
+
+    ![Trigger,Render and Commit](./Readme-Image/trigger,render,commit.png)
+
+### Step-1: Trigger a render
+There are two reasons for a component to render:
+- It's the component's initial render.
+- The component's(or one of its ancestors) state has been updated.
+#### Initial Render
+When your app starts, you need to trigger the initial render. It's done by calling createRoot with teh target DOM node, and then calling its render method with your component
+#### Re-renders when state updates
+- Once the component has been initially rendered, you can trigger further renders by updating its state with the set function. Updating your component's state automatically queues a render.
+- You can imagine these as a restaurant guest ordering tea, dessert, and all sorts of things after puttin gin their first order, depending on the state of their thirst or hunger.
+
+### Step 2: React renders your components
+After you trigger a render, React calls your components to figure out what to display on screen.. "Rendering" is React calling your components.
+- On initial render, React will call the root component.
+- For subsequent renders, React will call the function componet whose state update tirggerd  the render.
+
+This process is recursive: if the updated component returns some other component, React will render that component next, and if that component also returns something, it will render that component next, and as on.
+
+### Step 3: React commits changes to the DOM
+After rendering (calling) your components, React will modify the DOM.
+- For the initial render, React will use the appendChild() DOM API to put all the DOM nodes it has created on screen.
+- For re-renders, React will apply the minimal necessary operations (calculated while rendering) to make the DOM match the latest rendering output.
+
+React only changes the DOM nodes if there's a difference between renders.
+
+</details>
