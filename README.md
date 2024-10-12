@@ -134,6 +134,52 @@ After that
 </details>
 
 <details>
+<summary>About React Component</summary>
+
+## What is React Component?
+In React, a component is the building block of a user interface. Components allow you to break down complex UIs into smaller, reusable pieces.
+There are two main types of React componets:
+### 1. Functional Components
+These are simple JavaScript functions that accept `props` (data passed from the parent component) and return React elements. They're easy to write and are often preferred for simple UI elements. For example:
+```jsx
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+```
+
+### 2. Class Components:
+ These are ES6 classes that extend `React.Component`. They offer more features, like local state and lifecycle methods (e.g., `componentDidMount, componentDidUpdate`). For example:
+ ```jsx
+ class Greeting extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}!</h1>;
+  }
+}
+```
+Modern React mostly leans towards functional components, especially with the introduction of React Hooks (like useState, useEffect), which allow functional components to handle state and lifecycle features.
+
+### Key Concepts in React Components:
+`1. Props:` Short for `proporties,` these are the inputs to a React component. They are passed to components via attributes and are read-only (cannot be modified by the component itself).
+`2. State:` They are passed to components via attributes and are read-only (cannot be modified by the component itself).
+`3. Lifecycle Methods:` These are methods you can use in class components to hook into different phases of a component's life (mounting, updating, and unmounting).
+`4. Hooks:` React hooks (like useState, useEffect) allow you to use state and lifecycle features in functional components without writing a class.
+
+</details>
+
+<details>
+<summary>About JSX</summary>
+
+## What is JSX?
+JSX stands for JavaScript XML. JSX allows us to write HTML in React. JSX makes it easier to write and add HTML in React. JSX allows us to write HTML elements in JavaScript and place them in the DOM without any `createElement()` and/or `appendChild()` methods.
+
+>We are not required to use JSX, but JSX makes it easier to write React applications.
+
+> 
+
+</details>
+
+
+<details>
 <summary>About Props</summary>
 
 ## What are Props?
