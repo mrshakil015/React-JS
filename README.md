@@ -710,3 +710,25 @@ All Steps:
 **Step-5:** Add inverse data flow
 
 </details>
+
+<details>
+<summary>Type Error Handle</summary>
+
+`prop-types` errors handle: For deactivate the prop-types error go to the  `eslint.config.js` file under the `rules:` section include this rules: `'react/prop-types': 'off'`. 
+>It is not the best practice to handle this error. as a beginner it's ok. 
+```js
+rules: {
+      ...js.configs.recommended.rules,
+      ...react.configs.recommended.rules,
+      ...react.configs['jsx-runtime'].rules,
+      ...reactHooks.configs.recommended.rules,
+      'react/jsx-no-target-blank': 'off',
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+      'react/prop-types': 'off' //this is the rule
+    },
+```
+
+</details>
