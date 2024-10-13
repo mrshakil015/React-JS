@@ -4,6 +4,10 @@
     gap: 10px;
 }
 
+.visited{
+    background-color: rgb(100, 99, 99);
+}
+
 @media screen and (max-width: 576px) {
     .country-container{
         grid-template-columns: 1fr;
