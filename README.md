@@ -174,7 +174,14 @@ JSX stands for JavaScript XML. JSX allows us to write HTML in React. JSX makes i
 
 >We are not required to use JSX, but JSX makes it easier to write React applications.
 
-> 
+### JSX Conventions
+- We need to return a single parent element in jsx.
+- We can implement JS directly in jsx
+- All tags self-close in jsx
+- ClassName and HTMLFor, not class and for in jsx.
+- Write all HTML attributes in camelCase in jsx
+- Write inline styles as objects in jsx
+
 
 </details>
 

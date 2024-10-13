@@ -8,6 +8,11 @@
     background-color: rgb(100, 99, 99);
 }
 
+.flag-container img{
+    width: 100px;
+    margin: 3px;
+}
+
 @media screen and (max-width: 576px) {
     .country-container{
         grid-template-columns: 1fr;
