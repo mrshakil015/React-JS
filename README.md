@@ -739,3 +739,15 @@ rules: {
 ```
 
 </details>
+
+<details>
+<summary>Deploy Using Surge</summary>
+
+- At first install surge:
+    > npm install -g surge
+- For build the project run:
+    > npm run build
+- Then create dist using command:
+    > surge dist
+
+</details>
