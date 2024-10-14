@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "model": "Apple Watch Series 9",
+      "brand": "Apple",
+      "price": 399
+    },
+    {
+      "id": 2,
+      "model": "Galaxy Watch 6",
+      "brand": "Samsung",
+      "price": 329
+    },
+    {
+      "id": 3,
+      "model": "Venu 33",
+      "brand": "Garmin",
+      "price": 349
+    },
+    {
+      "id": 4,
+      "model": "Fitbit Sense 2",
+      "brand": "Fitbit",
+      "price": 299
+    },
+    {
+      "id": 5,
+      "model": "GTR 4",
+      "brand": "Amazfit",
+      "price": 199
+    }
+  ]
+  
