@@ -23,7 +23,7 @@ const Recipes = () => {
     return (
         <div className="max-w-7xl mx-auto mt-20 text-center mb-20">
             <div className="recipes-head px-5 lg:px-40">
-                <h1 className="text-4xl font-bold text-center">Our Recipes: {wantCook.length} </h1>
+                <h1 className="text-4xl font-bold text-center">Our Recipes</h1>
 
                 <p className="py-6">
                     Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus. Eget urna volutpat curabitur elementum mauris aenean neque.
