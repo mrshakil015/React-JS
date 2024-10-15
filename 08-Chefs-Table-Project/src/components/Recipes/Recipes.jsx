@@ -31,7 +31,7 @@ const Recipes = () => {
             </div>
             
             <div className="flex flex-col gap-6 lg:flex-row justify-between mt-5">
-                <div className="lg:w-3/5 grid grid-cols-1 lg:grid-cols-2 gap-6 recipes-container">
+                <div className="lg:w-3/5 grid grid-cols-1 lg:grid-cols-2 gap-3 recipes-container">
                     {
                         recipes.map(recipe => <Recipe
                         key={recipe.recipe_id}

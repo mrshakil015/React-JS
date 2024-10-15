@@ -6,7 +6,7 @@ const Recipe = ({ recipe,handleWantToCook }) => {
     const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe;
     return (
         <div>
-            <div className="rounded-xl border-2 border-gray-200 mx-2">
+            <div className="rounded-xl border-2 border-gray-200 mx-2 shadow-xl lg:mx-0">
                 <figure className="px-5 pt-5">
                     <img
                         src={recipe_image}
@@ -15,23 +15,23 @@ const Recipe = ({ recipe,handleWantToCook }) => {
                 </figure>
                 <div className="text-left p-5 space-y-4">
                     <h2 className="card-title">{recipe_name}</h2>
-                    <p>{short_description} </p>
+                    <p className="text-[#878787]">{short_description} </p>
                     <hr />
                     <h2 className="text-lg font-medium">Ingredients: {ingredients.length} </h2>
                     <ul className="pl-3">
                         {
-                            ingredients.map((ingredient, idx) => <li key={idx}>{ingredient}</li>)
+                            ingredients.map((ingredient, idx) => <li className="text-[#878787]" key={idx}>{ingredient}</li>)
                         }
                     </ul>
                     <hr />
                     <div className="flex justify-between items-center">
                         <div className="flex">
                             <p className="mr-2 text-xl"><FaRegClock /></p>
-                            <p>{preparing_time} minutes</p>
+                            <p className="text-[#878787]">{preparing_time} minutes</p>
                         </div>
                         <div className="flex">
                             <p className="mr-2 text-xl"><MdOutlineLocalFireDepartment /></p>
-                            <p>{calories}</p>
+                            <p className="text-[#878787]">{calories} calories</p>
                         </div>
                     </div>
                     <div className="card-actions">

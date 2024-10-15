@@ -1,8 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 const Header = () => {
   return (
-    <div className="navbar max-w-6xl mx-auto">
+    <div className="navbar max-w-7xl mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,7 +26,7 @@ const Header = () => {
             <li><a>Search</a></li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-3xl font-bold text-[#150B2B]">Chefs Table</a>
+        <a className="btn btn-ghost text-xl lg:text-3xl font-bold text-[#150B2B]">Chefs Table</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

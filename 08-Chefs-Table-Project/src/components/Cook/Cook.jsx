@@ -13,7 +13,7 @@ const Cook = ({ wantCook }) => {
     const totalCalories = currentlyCooking.reduce((acc, recipe) => acc + recipe.calories, 0);
     const totaltimes = currentlyCooking.reduce((acc, recipe) => acc + recipe.preparing_time, 0)
     return (
-        <div className="border-2 border-gray-200 rounded-xl">
+        <div className="border-2 border-gray-200 rounded-xl shadow-xl">
             <div className="p-3">
                 <h1 className="text-2xl font-semibold mt-4 mb-2">Want to Cook: {wantCook.length}</h1>
                 <hr />
@@ -34,7 +34,7 @@ const Cook = ({ wantCook }) => {
                             </thead>
                             <tbody>
                                 {wantCook.map((recipe, idx) => (
-                                    <tr key={idx}>
+                                    <tr key={idx} className="font-light">
                                         <td>{idx + 1}</td>
                                         <td>{recipe.recipe_name}</td>
                                         <td>{recipe.preparing_time} minutes</td>
@@ -75,7 +75,7 @@ const Cook = ({ wantCook }) => {
                                 </thead>
                                 <tbody>
                                     {currentlyCooking.map((recipe, idx) => (
-                                        <tr key={idx}>
+                                        <tr key={idx} className="font-light">
                                             <td>{idx + 1}</td>
                                             <td>{recipe.recipe_name}</td>
                                             <td>{recipe.preparing_time} minutes</td>
