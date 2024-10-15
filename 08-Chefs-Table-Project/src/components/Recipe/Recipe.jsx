@@ -2,18 +2,18 @@ import PropTypes from "prop-types";
 import { FaRegClock } from "react-icons/fa";
 import { MdOutlineLocalFireDepartment } from "react-icons/md";
 
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe,handleWantToCook }) => {
     const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe;
     return (
         <div>
-            <div className="card bg-base-100 border-2 border-gray-200 mx-2">
-                <figure className="px-10 pt-10">
+            <div className="rounded-xl border-2 border-gray-200 mx-2">
+                <figure className="px-5 pt-5">
                     <img
                         src={recipe_image}
                         alt="Shoes"
                         className="w-full h-[200px] object-cover rounded-xl" />
                 </figure>
-                <div className="card-body text-left">
+                <div className="text-left p-5 space-y-4">
                     <h2 className="card-title">{recipe_name}</h2>
                     <p>{short_description} </p>
                     <hr />
@@ -35,7 +35,10 @@ const Recipe = ({ recipe }) => {
                         </div>
                     </div>
                     <div className="card-actions">
-                        <button className="btn bg-[#0BE58A] rounded-full">Want to Cook</button>
+                        <button 
+                        className="btn bg-[#0BE58A] rounded-full"
+                        onClick={()=>handleWantToCook(recipe)}
+                        >Want to Cook</button>
                     </div>
                 </div>
             </div>
@@ -44,7 +47,8 @@ const Recipe = ({ recipe }) => {
 };
 
 Recipe.propTypes = {
-    recipe: PropTypes.object
+    recipe: PropTypes.object.isRequired,
+    handleWantToCook: PropTypes.func.isRequired
 }
 
 export default Recipe;
