@@ -1,53 +1,52 @@
 [
-    {
-      "id": 1,
-      "cover_img": "https://images.unsplash.com/photo-1529655683826-aba9b3e77383",
-      "title": "The Hidden Path",
-      "author": "Jane Doe",
-      "author_img": "https://randomuser.me/api/portraits/women/1.jpg",
-      "posted_date": "2024-10-01",
-      "reading_time": 5,
-      "hashtags": ["#Adventure", "#Mystery", "#Journey"]
-    },
-    {
-      "id": 2,
-      "cover_img": "https://images.unsplash.com/photo-1512820790803-83ca734da794",
-      "title": "Whispers in the Wind",
-      "author": "John Smith",
-      "author_img": "https://randomuser.me/api/portraits/men/1.jpg",
-      "posted_date": "2024-09-20",
-      "reading_time": 8,
-      "hashtags": ["#Romance", "#Drama", "#LoveStory"]
-    },
-    {
-      "id": 3,
-      "cover_img": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
-      "title": "Beyond the Horizon",
-      "author": "Emily White",
-      "author_img": "https://randomuser.me/api/portraits/women/2.jpg",
-      "posted_date": "2024-10-05",
-      "reading_time": 10,
-      "hashtags": ["#SciFi", "#Space", "#Exploration"]
-    },
-    {
-      "id": 4,
-      "cover_img": "https://images.unsplash.com/photo-1507842217343-583bb7270b66",
-      "title": "Echoes of the Past",
-      "author": "Robert Black",
-      "author_img": "https://randomuser.me/api/portraits/men/2.jpg",
-      "posted_date": "2024-08-15",
-      "reading_time": 7,
-      "hashtags": ["#History", "#War", "#Legacy"]
-    },
-    {
-      "id": 5,
-      "cover_img": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c",
-      "title": "Shadows and Secrets",
-      "author": "Alice Green",
-      "author_img": "https://randomuser.me/api/portraits/women/3.jpg",
-      "posted_date": "2024-09-10",
-      "reading_time": 6,
-      "hashtags": ["#Thriller", "#Crime", "#Suspense"]
-    }
-  ]
-  
+  {
+    "id": 1,
+    "cover_img": "https://images.unsplash.com/photo-1529655683826-aba9b3e77383",
+    "title": "The Hidden Path: A Journey Through Uncharted Territories",
+    "author": "Jane Doe",
+    "author_img": "https://randomuser.me/api/portraits/women/1.jpg",
+    "posted_date": "2024-10-01",
+    "reading_time": 5,
+    "hashtags": ["#Adventure", "#Mystery", "#Journey"]
+  },
+  {
+    "id": 2,
+    "cover_img": "https://images.unsplash.com/photo-1512820790803-83ca734da794",
+    "title": "Whispers in the Wind: An Emotional Tale of Love and Loss",
+    "author": "John Smith",
+    "author_img": "https://randomuser.me/api/portraits/men/1.jpg",
+    "posted_date": "2024-09-20",
+    "reading_time": 8,
+    "hashtags": ["#Romance", "#Drama", "#LoveStory"]
+  },
+  {
+    "id": 3,
+    "cover_img": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+    "title": "Beyond the Horizon: Exploring the Boundaries of Space and Time",
+    "author": "Emily White",
+    "author_img": "https://randomuser.me/api/portraits/women/2.jpg",
+    "posted_date": "2024-10-05",
+    "reading_time": 10,
+    "hashtags": ["#SciFi", "#Space", "#Exploration"]
+  },
+  {
+    "id": 4,
+    "cover_img": "https://images.unsplash.com/photo-1507842217343-583bb7270b66",
+    "title": "Echoes of the Past: Lessons from History’s Forgotten Wars",
+    "author": "Robert Black",
+    "author_img": "https://randomuser.me/api/portraits/men/2.jpg",
+    "posted_date": "2024-08-15",
+    "reading_time": 7,
+    "hashtags": ["#History", "#War", "#Legacy"]
+  },
+  {
+    "id": 5,
+    "cover_img": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c",
+    "title": "Shadows and Secrets: Unraveling the Mysteries of a Dangerous World",
+    "author": "Alice Green",
+    "author_img": "https://randomuser.me/api/portraits/women/3.jpg",
+    "posted_date": "2024-09-10",
+    "reading_time": 6,
+    "hashtags": ["#Thriller", "#Crime", "#Suspense"]
+  }
+]
