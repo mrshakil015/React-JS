@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Recipe from "../Recipe/Recipe";
+import Cook from "../Cook/Cook";
 
 
 const Recipes = () => {
@@ -19,8 +20,8 @@ const Recipes = () => {
                 </p>
             </div>
             
-            <div className="flex flex-col lg:flex-row justify-between mt-5">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 recipes-container">
+            <div className="flex flex-col gap-6 lg:flex-row justify-between mt-5">
+                <div className="w-2/3 grid grid-cols-1 lg:grid-cols-2 gap-6 recipes-container">
                     {
                         recipe.map(recipe => <Recipe
                         key={recipe.recipe_id}
@@ -28,8 +29,9 @@ const Recipes = () => {
                         ></Recipe>)
                     }
                 </div>
-                <div className="w-1/2">
-                    <h1>Side container</h1>
+                <div className="w-1/3">
+                    <Cook></Cook>
+                    
                 </div>
             </div>
         </div>

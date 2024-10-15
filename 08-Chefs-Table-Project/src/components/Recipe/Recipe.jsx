@@ -6,7 +6,7 @@ const Recipe = ({ recipe }) => {
     const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe;
     return (
         <div>
-            <div className="card bg-base-100 border-2 border-gray-200 m-2">
+            <div className="card bg-base-100 border-2 border-gray-200 mx-2">
                 <figure className="px-10 pt-10">
                     <img
                         src={recipe_image}
