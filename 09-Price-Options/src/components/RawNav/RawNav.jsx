@@ -14,7 +14,7 @@ const RawNav = () => {
       ];
       
     return (
-        <nav>
+        <nav className="text-black bg-yellow-100 p-6">
             <div className="text-2xl md:hidden" onClick={() => setOpen(!open)}>
                 {
                     open === true ?
@@ -23,7 +23,9 @@ const RawNav = () => {
                 }
                 
             </div>
-           <ul className="md:flex">
+           <ul className={`md:flex duration-1000 absolute md:static bg-yellow-100 px-6 
+            ${open ? 'top-24' : '-top-60'}
+            shadow-lg md:shadow-none`}>
            {
                 routes.map(route => <Link key={route.id} route={route}></Link>)
             }
