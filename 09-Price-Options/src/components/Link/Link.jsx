@@ -7,7 +7,7 @@ const Link = ({route}) => {
     );
 };
 
-Link.proptypes = {
+Link.propTypes = {
     route: PropTypes.object.isRequired
 }
 
