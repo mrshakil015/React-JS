@@ -880,4 +880,32 @@ const Home = () => {
 
     ```
 
+### Dynamic Route:
+- Inside the components:
+    ```jsx
+    return (
+        <div style={userStyle}>
+            <h2>{name}</h2>
+            <p>Email: {email}</p>
+            <p>Phone: {phone}</p>
+            <Link to={`/user/${id}`}>Show Details</Link> //This is the dynamic urls
+        </div>
+    );
+    ```
+
+- Create dynamic path route inside the `main.jsx`:
+    ```jsx
+    {
+        path: 'user/:userId',
+        element: <UserDetails></UserDetails>
+      }
+    ```
+### Get single user data from dynamic route:
+```jsx
+{
+    path: 'user/:userId',
+    loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+    element: <UserDetails></UserDetails>
+}
+```
 </details>
