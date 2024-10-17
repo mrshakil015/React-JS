@@ -1,3 +1,5 @@
-## Hooks
+## Concepts
+- Link
+- NavLink
 - useNavigate()
 - useParams()

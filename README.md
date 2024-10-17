@@ -978,4 +978,23 @@ Handle (Error, not fount/404) page:
             ..
         ]
     ```
+## Active Route using NavLink:
+A `<NavLink>` is a special kind of `<Link>` that knows whether or not it is "active", "pending", or "transitioning". This is useful in a few different scenarios:
+
+```jsx
+<nav>
+    <NavLink to="/">Home</NavLink>
+    <NavLink to="/about">About</NavLink>
+    <NavLink to="/contact">Contact Us</NavLink>
+    <NavLink to="/users">Users</NavLink>
+    <NavLink to="/posts">Posts</NavLink>
+</nav>
+```
+Style the active route:
+```css
+nav a.active{
+    color: white;
+    text-decoration: underline;
+}
+```
 </details>
