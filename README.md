@@ -750,3 +750,99 @@ rules: {
     > surge dist
 
 </details>
+
+<details>
+<summary>React Router</summary>
+
+## Setup
+- Open up the terminal
+    ```cmd
+    npm create vite@latest name-of-your-project -- --template react
+    # follow prompts
+    cd <your new project directory>
+    npm install react-router-dom # always need this!
+    npm install localforage match-sorter sort-by # only for this tutorial.
+    npm run dev
+    ```
+
+## Adding a Router
+
+First thing to do is create a Browser Router and configure our first route. This will enable client side routing for our web app.
+
+The `main.jsx` file is the entry point. Open it up and we'll put React Router on the page.
+
+> Change 3 section into the `main.jsx` file.
+
+```jsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+
+// First import the router configuration
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+// Second Create Router
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <div>Hello from react router!!</div>
+  },
+  {
+    path: '/about',
+    element: <About></About>
+  },
+  {
+    path: '/contact',
+    element: <Contact></Contact>
+  }
+]);
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    // Third Include the router here
+    <RouterProvider router={router}></RouterProvider>
+  </StrictMode>,
+)
+```
+
+## Nested Route
+
+>main.jsx
+```jsx
+// .... Existing Code......
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home></Home>,
+    children: [
+      {
+        path: '/about',
+        element: <About></About>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
+      }
+    ]
+  }
+]);
+```
+
+// .... Existing Code......
+
+- Include the `<Outlet>` inside the parent route
+
+```jsx
+import { Outlet } from "react-router-dom";
+// -------Existing Code----
+<Outlet></Outlet>
+
+// ------Existing code ------
+```
+
+</details>
