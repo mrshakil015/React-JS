@@ -754,6 +754,11 @@ rules: {
 <details>
 <summary>React Router</summary>
 
+- React Router is a lightweight, fully-featured routing library for the React JavaScript library.
+- It allwos developers to create user interfaces using UI components and single-page applications.
+- One of the most important features we always want to implement when developing these applications is routing.
+- Routing is the process of redirecting a user to different pages based on their action or reuest.
+
 ## Setup
 - Open up the terminal
     ```cmd
@@ -765,7 +770,7 @@ rules: {
     npm run dev
     ```
 
-## Adding a Router
+### Adding a Router
 
 First thing to do is create a Browser Router and configure our first route. This will enable client side routing for our web app.
 
@@ -809,9 +814,9 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-## Nested Route
+### How to write Nested Routes in createBrowserRouter()
+1. `createBrowserRouter()` - used to create a router object by passing a list of route objects.
 
->main.jsx
 ```jsx
 // .... Existing Code......
 
@@ -833,32 +838,61 @@ const router = createBrowserRouter([
 ]);
 // .... Existing Code......
 ```
-
-
-- Include the `<Outlet>` inside the parent route
+- Include `<Outlet/>`: The react `<Outlet/>` component (from react-router-dom) is used within the parent route element to indicate where a child route element should be rendered.
 
 ```jsx
 import { Outlet } from "react-router-dom";
 // -------Existing Code----
-<Outlet></Outlet>
-
+<div>
+    <Navbar></Navbar>
+    <Outlet></Outlet>
+    <Footer></Footer>
+</div>
 // ------Existing code ------
 ```
+### `<Link>` ELement:
+- A `<Link>` is an element that lets the user navigate to another page by clicking or tapping on it.
+- THe `to` prop specifies the location to which the user will be redirected after clicking on the `<Link>`.
+- Rendering a `<Link>` will insert an anchor tag `(<a>)` in our HTML documents, but the anchor's default behavior (triggering a page reload) will be disabled.
 
-- Parent components stracture:
 ```jsx
-const Home = () => {
-    return (
-        <div>
-            <Header></Header>
-            <Outlet></Outlet>
-            <Footer></Footer>
-        </div>
-    );
-};
+<Link to "/about">About</Link>
 ```
 
-### Loading Data:
+
+### `<NavLink>` Element:
+- A `<NavLink>` is a special kind of `<Link>` that knows whether or not it is "active" or "pending".
+- This is useful when building a navigation menu, such as a breadcrumb or a set of tabs where you''d like to show which of them is currently selected.
+```jsx
+<NavLink
+  to="/messages"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : ""
+  }
+>
+  Messages
+</NavLink>;
+```
+- Active Route using NavLink:
+```jsx
+<nav>
+    <NavLink to="/">Home</NavLink>
+    <NavLink to="/about">About</NavLink>
+    <NavLink to="/contact">Contact Us</NavLink>
+    <NavLink to="/users">Users</NavLink>
+    <NavLink to="/posts">Posts</NavLink>
+</nav>
+```
+Style the active route:
+```css
+nav a.active{
+    color: white;
+    text-decoration: underline;
+}
+```
+
+### Loading Data using useLoaderData():
+`useLoaderData()`- This hook provides the value returned from your route loader. Each route can define a "loader" function to provide data to the route element before it renders.
 - At first used loader inside the `main.jsx`:
     ```jsx
     //Existing code
@@ -877,8 +911,15 @@ const Home = () => {
     const users = useLoaderData();
     ..
     ..
-
     ```
+
+### useParams() Hooks:
+ This hook returns an object of key/value pairs of the dynamic params from the current URL that were matched by the `<Route path>`.
+
+ ```jsx
+import { useParams } from 'react-router-dom';
+let {userId} = useParams();
+ ```
 
 ### Dynamic Route:
 - Inside the components:
@@ -906,6 +947,26 @@ const Home = () => {
     path: 'user/:userId',
     loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
     element: <UserDetails></UserDetails>
+}
+```
+
+### useNavigate() Hooks:
+The `useNavigate()` hook returns a function that lets us navigate programmatically. It returns a function that can be invoked with a URI to redirect the client to the respective page.
+
+```jsx
+import { Link, useNavigate } from "react-router-dom";
+
+const Post = ({post}) => {
+    const navigate = useNavigate();
+    
+    const handleShowDetail = () =>{
+        navigate(`/post/${id}`);
+    }
+    return (
+        <div>
+            <button onClick={handleShowDetail}>Click to see details</button>
+        </div>
+    );
 }
 ```
 
@@ -978,23 +1039,41 @@ Handle (Error, not fount/404) page:
             ..
         ]
     ```
-## Active Route using NavLink:
-A `<NavLink>` is a special kind of `<Link>` that knows whether or not it is "active", "pending", or "transitioning". This is useful in a few different scenarios:
+### `<Navigate>` Component:
+- `<Navigate>`- This component is a build-in components in React router version 6.
+- It is a wrapper for the useNavigate hook, and the current location changes when you render it
+- It accepts all the same arguments as props.
+```jsx
+<div>
+    {error && <p>{error.message}</p>}
+    {user && (
+        <Navigate to="/dashboard" replace={true} />
+    )}
+</div>
+```
+
+### useNavigation() Hook:
+- This Hook gives the developer access to properties that show the state of a currently rendered route.
+- For example, this Hook can indicate when a route is "loading" or when a form on the route is "submitting" as well as "idle" when there is no navigation pending.
+- It is useful for building loading indicators or optimistically updating data on a page.
 
 ```jsx
-<nav>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/about">About</NavLink>
-    <NavLink to="/contact">Contact Us</NavLink>
-    <NavLink to="/users">Users</NavLink>
-    <NavLink to="/posts">Posts</NavLink>
-</nav>
+import { useNavigation } from "react-router-dom";
+
+const Home = () => {
+    const naviation = useNavigation();
+    return (
+        <div>
+            <Header></Header>
+            {
+                naviation.state === "loading" ? 
+                <p>Loading........</p>:
+
+            }
+            <Footer></Footer>
+        </div>
+    );
+};
 ```
-Style the active route:
-```css
-nav a.active{
-    color: white;
-    text-decoration: underline;
-}
-```
+
 </details>
