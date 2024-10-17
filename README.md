@@ -831,9 +831,9 @@ const router = createBrowserRouter([
     ]
   }
 ]);
+// .... Existing Code......
 ```
 
-// .... Existing Code......
 
 - Include the `<Outlet>` inside the parent route
 
@@ -844,5 +844,40 @@ import { Outlet } from "react-router-dom";
 
 // ------Existing code ------
 ```
+
+- Parent components stracture:
+```jsx
+const Home = () => {
+    return (
+        <div>
+            <Header></Header>
+            <Outlet></Outlet>
+            <Footer></Footer>
+        </div>
+    );
+};
+```
+
+### Loading Data:
+- At first used loader inside the `main.jsx`:
+    ```jsx
+    //Existing code
+    {
+        path: '/users',
+        loader: () => fetch('https://jsonplaceholder.typicode.com/users'),
+        element: <Users></Users>
+      },
+      //Existing code
+    ```
+- Get data from components
+    ```jsx
+    import { useLoaderData } from "react-router-dom";
+    ..
+    ..
+    const users = useLoaderData();
+    ..
+    ..
+
+    ```
 
 </details>
