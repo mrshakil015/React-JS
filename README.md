@@ -908,4 +908,37 @@ const Home = () => {
     element: <UserDetails></UserDetails>
 }
 ```
+
+## Dynamic Routing using OnClick Method:
+- Import and Create navigate function
+    ```jsx
+    import { useNavigate } from "react-router-dom";
+    const navigate = useNavigate();
+    ```
+- Create onclick handle function:
+    ```jsx
+    const handleShowDetail = () =>{
+        navigate(`/post/${id}`);
+    }
+    ```
+- Integrate with button:
+    ```jsx
+    <button onClick={handleShowDetail}>Click to see details</button>
+    ```
+## Go Back Navigate:
+- Create navigate function using useNavigate()
+    ```jsx
+    import { useNavigate } from "react-router-dom";
+    const navigate = useNavigate();
+    ```
+- Create handle function:
+    ```jsx
+    const handleGoBack = () =>{
+        navigate(-1);
+    }
+    ```
+- Integrate with button
+    ```jsx
+    <button onClick={handleGoBack}>Go Back</button>
+    ```
 </details>
