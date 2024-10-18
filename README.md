@@ -1129,3 +1129,31 @@ InitialValue:
 ```
 
 </details>
+
+<details>
+<summary>Controlled and Uncontrolled Components</summary>
+
+# Controlled Components
+- In a controlled component, the state of the form elements is `controlled by React.`
+- The value of the input is set throught the component's state and is `updated through event handlers.`
+- When  the input value changes, the state is updated, and `React re-renders the component to reflect the new value.`
+- Controlled components offer `more control over the form's behavior` and provide a clear data flow.
+
+### Flow of a Controlled Component:
+![controlled](./Readme-Image/flow-of-controlled-component.png)
+
+### Advantages of Controlled Components:
+- The instant validation check is oneof the major benefits of using the controlled component over the uncontrolled component in react.
+- We can have validation checks on every keystroke of the user when using controlled components in react. This is because we can access the input value at every time with the help of react state.
+- In contrast, in a uncontrolled component, the input value is only available when the form is submitted by the user.
+- > For example, we can perform a validation check on the user input(password type) where the requirement is that  the input password should be at least eight characters and display a conditional message accordingly.
+
+# Unconttrolled Components
+- In an uncontrolled component, the form element's state is manage by the DOM rather than React. We can directly access the DOM element using references after rendering.
+- Thus uncontrolled components do not depend on any state of input elements or any event handler. This type of component does not care about real-time input changes.
+
+### Flow of an Uncontrolled Component:
+![uncontrolled](./Readme-Image/flow-of-uncontrolled-component.jpg)
+
+</details>
+
