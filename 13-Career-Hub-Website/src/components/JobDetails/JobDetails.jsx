@@ -11,13 +11,13 @@ const JobDetails = () => {
     const { job_title, job_description, job_responsibility, educational_requirements, experiences, salary, contact_information } = job;
 
     const handleApplyJob = () =>{
-        saveJobApplication(id);
+        saveJobApplication(idInt);
         toast('You have applied successfully');
     }
 
     return (
         <div className="mb-10">
-            <div className="grid gap-4 md:grid-cols-4 mt-20">
+            <div className="grid gap-4 md:grid-cols-5 mt-20">
                 <div className="md:col-span-3 space-y-6 text-[#757575]">
                     <p><strong className="text-black">Job Description: </strong>{job_description}</p>
                     <p><strong className="text-black">Job Responsibilities: </strong>{job_responsibility}</p>
@@ -27,8 +27,8 @@ const JobDetails = () => {
                     <p>{experiences}</p>
 
                 </div>
-                <div>
-                    <div className="bg-[#f4f2ff] py-7 px-4 rounded-md">
+                <div className="md:col-span-2">
+                    <div className="bg-[#f4f2ff] p-7 rounded-md">
                         <h2 className="text-xl font-extrabold border-b-2 border-b-gray-200 text-black pb-4">Job Details</h2>
                         <div className="space-y-2 mt-4">
                             <p><strong>Salary: </strong>{salary}</p>
