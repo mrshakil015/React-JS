@@ -1281,3 +1281,50 @@ export default RefForm;
 ```
 
 </details>
+
+<details>
+<summary>Custom Hook for managing the state of an input field</summary>
+
+### Code Breakdown:
+```js
+import { useState } from "react"
+
+const useInputState = (defaultValue=null) =>{
+    // ---first declare useState()
+    const [value, setValue] = useState(defaultValue);
+
+    // --- on change method to manage state
+    const handleChange = e =>{
+        setValue(e.target.value);
+    }
+
+    // --- return the value and 
+    return [value, handleChange];
+
+}
+
+export default useInputState;
+
+```
+### Explanation:
+**Initial Setup (`useState`):**
+
+- The line` const [value, setValue] = useState(defaultValue);` initializes a state variable `value` and a setter function `setValue`.
+- `useState` is used to store the value of the input, and `defaultValue` is the initial value provided when the hook is called.
+- If no default value is provided, it will be set to `null`.
+
+**Handling Changes (`handleChange`):**
+
+- `e.target.value:` In a form input event, `e` is the event object, and `e.target` refers to the DOM element (in this case, the input field). `e.target.value` retrieves the current value of that input field.
+- `setValue(e.target.value):` This updates the state (`value`) with the new input value, using the `setValue` function from `useState`.
+
+**Return Values:**
+
+- The hook returns an array containing two elements: `[value, handleChange]`.
+- `value`: The current value of the input field (managed by `useState`).
+- `handleChange`: A function to update the value when an input changes.
+
+**Usage:** 
+- This hook would be used in a component to manage the state of an individual input field.
+
+</details>
