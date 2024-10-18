@@ -6,3 +6,9 @@
 body {
     font-family: "Manrope", sans-serif;
 }
+
+.btn-gradient {
+    background: var(--Linear, linear-gradient(90deg, #7E90FE 0%, #9873FF 100%));
+    color: white;
+    font-weight: 800;
+}

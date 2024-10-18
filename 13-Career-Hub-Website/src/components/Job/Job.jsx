@@ -19,7 +19,7 @@ const Job = ({ job }) => {
                     <button className="px-5 py-2 font-bold border rounded border-[#7E90FE] text-[#7E90FE]">{job_type}</button>
                 </div>
                 <div className="card-actions">
-                    <button className="btn btn-primary">View Details</button>
+                    <button className="btn btn-gradient">View Details</button>
                 </div>
             </div>
         </div>
