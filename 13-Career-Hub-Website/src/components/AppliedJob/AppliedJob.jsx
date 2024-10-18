@@ -2,6 +2,7 @@ import { CiLocationOn,CiDollar  } from "react-icons/ci";
 import { Link } from "react-router-dom";
 const AppliedJob = ({ appliedjob }) => {
     const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = appliedjob;
+    
     return (
         <div className="border flex flex-col space-y-3 md:flex-row md:space-y-0 justify-between items-center p-7">
             <div className="flex flex-col md:flex-row gap-8">
@@ -13,7 +14,7 @@ const AppliedJob = ({ appliedjob }) => {
                 <div className="space-y-2 text-center md:text-left">
                     <h2 className="text-2xl font-extrabold text-[#595858]">{job_title}</h2>
                     <p className="font-semibold text-[#757575]">{company_name}</p>
-                    <div className="flex mt-4 gap-4 text-[#757575]">
+                    <div className="flex justify-center md:justify-start mt-4 gap-4 text-[#757575]">
                         <p className="flex"><CiLocationOn className="text-2xl mr-2"></CiLocationOn> {location}</p>
                         <p className="flex"><CiDollar className="text-2xl mr-2"></CiDollar> {salary}</p>
                     </div>
