@@ -112,6 +112,196 @@
           "email": "info@gmail.com",
           "address": "Dhanmondi 32, Sukrabad Dhaka, Bangladesh"
         }
+      },
+      {
+        "id": 7,
+        "logo": "https://i.ibb.co.com/q94Wjpr/microsoft.png",
+        "job_title": "Software Development Engineer",
+        "company_name": "Microsoft Corporation",
+        "remote_or_onsite": "Onsite",
+        "location": "Redmond, WA, USA",
+        "job_type": "Full Time",
+        "salary": "120k-170k",
+        "job_description": "A software development engineer is responsible for building and maintaining applications, ensuring they meet high-performance standards.",
+        "job_responsibility": "Design, develop, and maintain scalable software solutions with focus on usability, performance, and reliability.",
+        "educational_requirements": "Bachelor's in Computer Science or equivalent.",
+        "experiences": "3+ years of software development experience.",
+        "contact_information": {
+          "phone": "123-456-7890",
+          "email": "contact@microsoft.com",
+          "address": "1 Microsoft Way, Redmond, WA, USA"
+        }
+      },
+      {
+        "id": 8,
+        "logo": "https://i.ibb.co.com/Jrgjy5j/Amazon-Web-Services-Logo-wine.png",
+        "job_title": "Cloud Architect",
+        "company_name": "Amazon Web Services",
+        "remote_or_onsite": "Remote",
+        "location": "Seattle, WA, USA",
+        "job_type": "Contract",
+        "salary": "150k-200k",
+        "job_description": "A cloud architect designs and manages cloud environments ensuring efficient, scalable, and secure infrastructure.",
+        "job_responsibility": "Design cloud architecture solutions to support business applications and services.",
+        "educational_requirements": "Bachelor's degree in IT, Computer Science, or relevant field.",
+        "experiences": "5+ years of experience in cloud technologies.",
+        "contact_information": {
+          "phone": "123-555-7890",
+          "email": "cloudcareers@aws.com",
+          "address": "410 Terry Ave N, Seattle, WA, USA"
+        }
+      },
+      {
+        "id": 9,
+        "logo": "https://i.ibb.co.com/pZf6VcX/meta-logo.png",
+        "job_title": "Data Analyst",
+        "company_name": "Meta Platforms Inc.",
+        "remote_or_onsite": "Onsite",
+        "location": "Menlo Park, CA, USA",
+        "job_type": "Full Time",
+        "salary": "90k-130k",
+        "job_description": "Data analysts collect and analyze data to help organizations make informed business decisions.",
+        "job_responsibility": "Analyze large data sets and generate insights to inform product strategy.",
+        "educational_requirements": "Bachelor's degree in Statistics, Economics, or related field.",
+        "experiences": "2-4 years of experience as a Data Analyst.",
+        "contact_information": {
+          "phone": "987-654-3210",
+          "email": "jobs@meta.com",
+          "address": "1601 Willow Road, Menlo Park, CA, USA"
+        }
+      },
+      {
+        "id": 10,
+        "logo": "https://i.ibb.co.com/jDm4Vwj/Apple-Logo.png",
+        "job_title": "iOS Developer",
+        "company_name": "Apple Inc.",
+        "remote_or_onsite": "Remote",
+        "location": "Cupertino, CA, USA",
+        "job_type": "Full Time",
+        "salary": "140k-180k",
+        "job_description": "An iOS Developer is responsible for developing applications for Apple's iOS operating system.",
+        "job_responsibility": "Develop high-performance iOS applications using Swift and Objective-C.",
+        "educational_requirements": "Bachelor’s degree in Computer Science or related field.",
+        "experiences": "3+ years of iOS development experience.",
+        "contact_information": {
+          "phone": "123-987-6543",
+          "email": "careers@apple.com",
+          "address": "One Apple Park Way, Cupertino, CA, USA"
+        }
+      },
+      {
+        "id": 11,
+        "logo": "https://i.ibb.co.com/jbZBm0r/Tesla-Logo-PNG-Photos.png",
+        "job_title": "Electrical Engineer",
+        "company_name": "Tesla Inc.",
+        "remote_or_onsite": "Onsite",
+        "location": "Palo Alto, CA, USA",
+        "job_type": "Full Time",
+        "salary": "110k-160k",
+        "job_description": "Responsible for designing, developing, and testing electrical systems for Tesla's vehicles and other products.",
+        "job_responsibility": "Collaborate with cross-functional teams to design efficient electrical systems.",
+        "educational_requirements": "Bachelor's degree in Electrical Engineering.",
+        "experiences": "4+ years in electrical engineering.",
+        "contact_information": {
+          "phone": "987-555-4321",
+          "email": "hr@tesla.com",
+          "address": "3500 Deer Creek Road, Palo Alto, CA, USA"
+        }
+      },
+      {
+        "id": 12,
+        "logo": "https://i.ibb.co.com/nRMjB6Z/Logonetflix.png",
+        "job_title": "Machine Learning Engineer",
+        "company_name": "Netflix Inc.",
+        "remote_or_onsite": "Remote",
+        "location": "Los Gatos, CA, USA",
+        "job_type": "Full Time",
+        "salary": "150k-200k",
+        "job_description": "A Machine Learning Engineer builds models and algorithms to enhance user experience and content recommendations.",
+        "job_responsibility": "Develop and deploy machine learning models to optimize content recommendations.",
+        "educational_requirements": "Master’s degree in AI, Machine Learning, or related field.",
+        "experiences": "4+ years in machine learning development.",
+        "contact_information": {
+          "phone": "111-222-3333",
+          "email": "careers@netflix.com",
+          "address": "100 Winchester Circle, Los Gatos, CA, USA"
+        }
+      },
+      {
+        "id": 13,
+        "logo": "https://i.ibb.co.com/CHb6mBD/ibm-logo-2.png",
+        "job_title": "Blockchain Developer",
+        "company_name": "IBM",
+        "remote_or_onsite": "Onsite",
+        "location": "Armonk, NY, USA",
+        "job_type": "Contract",
+        "salary": "130k-180k",
+        "job_description": "A Blockchain Developer is responsible for developing and managing decentralized blockchain applications.",
+        "job_responsibility": "Design, implement, and support blockchain networks and smart contracts.",
+        "educational_requirements": "Bachelor's degree in Computer Science or relevant field.",
+        "experiences": "3+ years in blockchain technology.",
+        "contact_information": {
+          "phone": "789-123-4567",
+          "email": "jobs@ibm.com",
+          "address": "1 North Castle Drive, Armonk, NY, USA"
+        }
+      },
+      {
+        "id": 14,
+        "logo": "https://i.ibb.co.com/J592SRg/twitter-logo-A84-FE9258-E-seeklogo-com.png",
+        "job_title": "DevOps Engineer",
+        "company_name": "Twitter Inc.",
+        "remote_or_onsite": "Remote",
+        "location": "San Francisco, CA, USA",
+        "job_type": "Full Time",
+        "salary": "130k-170k",
+        "job_description": "A DevOps Engineer is responsible for automating and streamlining operations, ensuring reliable application deployment.",
+        "job_responsibility": "Build and maintain CI/CD pipelines and monitor system performance.",
+        "educational_requirements": "Bachelor's degree in Computer Science or equivalent.",
+        "experiences": "4+ years of experience in DevOps.",
+        "contact_information": {
+          "phone": "555-987-6543",
+          "email": "careers@twitter.com",
+          "address": "1355 Market Street, San Francisco, CA, USA"
+        }
+      },
+      {
+        "id": 15,
+        "logo": "https://i.ibb.co.com/nm6G53B/Adobe-Corporate-logo-svg.png",
+        "job_title": "UX Researcher",
+        "company_name": "Adobe Inc.",
+        "remote_or_onsite": "Remote",
+        "location": "San Jose, CA, USA",
+        "job_type": "Full Time",
+        "salary": "100k-140k",
+        "job_description": "A UX Researcher focuses on understanding user behaviors, needs, and motivations through observation and analysis.",
+        "job_responsibility": "Conduct user research to improve software products.",
+        "educational_requirements": "Bachelor’s degree in Human-Computer Interaction or similar.",
+        "experiences": "3+ years in UX research.",
+        "contact_information": {
+          "phone": "444-123-5555",
+          "email": "researchjobs@adobe.com",
+          "address": "345 Park Avenue, San Jose, CA, USA"
+        }
+      },
+      {
+        "id": 16,
+        "logo": "https://i.ibb.co.com/Gn0XshW/Airbnb-Logo-B-lo-svg.png",
+        "job_title": "Product Manager",
+        "company_name": "Airbnb",
+        "remote_or_onsite": "Onsite",
+        "location": "San Francisco, CA, USA",
+        "job_type": "Full Time",
+        "salary": "160k-210k",
+        "job_description": "A Product Manager is responsible for overseeing the development of products from concept to launch.",
+        "job_responsibility": "Lead cross-functional teams to deliver high-quality products on time.",
+        "educational_requirements": "Bachelor’s degree in Business or related field.",
+        "experiences": "5+ years in product management.",
+        "contact_information": {
+          "phone": "222-444-6666",
+          "email": "pmjobs@airbnb.com",
+          "address": "888 Brannan Street, San Francisco, CA, USA"
+        }
       }
   
   ]
