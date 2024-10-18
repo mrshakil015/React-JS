@@ -1328,3 +1328,86 @@ export default useInputState;
 - This hook would be used in a component to manage the state of an individual input field.
 
 </details>
+
+<details>
+<summary>Reusable Form</summary>
+
+- At first create a Component. Inside the computer include the form like this:
+    ```jsx
+        <form>
+            <input type="text" name="name" />
+            <br />
+            <input type="email" name="email" id="" />
+            <br />
+            <input type="password" name="password" id="" />
+            <br />
+            <input type="submit" value="Submit" />
+        </form>
+    ```
+
+- Include the `ReusableForm` component inside the `App.jsx` or where we need.
+    ```jsx
+    <ReusableForm></ReusableForm>
+    ```
+- If we need, we can set dynamic text into the form like: submit btn text, form title and description. also onsubmit handler.
+    ```jsx
+    <ReusableForm
+        formTitle={'User Registration Form'}
+        submitBtnText={'Sign Up'}
+        handleFormSubmit={handleUpdateProfile}
+      ></ReusableForm>
+    ```
+- Get the dynamic data as props from the component:
+    ```jsx
+    const ReusableForm = ({formTitle, handleFormSubmit, submitBtnText='Submit', children}) => {
+        ...
+        ...
+    }
+    ```
+- Using `children` props we can pass as `div` and get multiple information without individual props like: formTitle, formDescription.
+    ```jsx
+    <ReusableForm
+        submitBtnText={'Update'}
+        handleFormSubmit={handleUpdateProfile}
+      >
+        <div>
+          <h2>Profile Update From</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, dolor!</p>
+        </div>
+      </ReusableForm>
+    ```
+- For display on the form used dynamic `{children}` above the form:
+    ```jsx
+    <div>
+        {children}
+        <form onSubmit={handleLocalSubmit}>
+            <input type="text" name="name" />
+            <br />
+            <input type="email" name="email" id="" />
+            <br />
+            <input type="password" name="password" id="" />
+            <br />
+            <input type="submit" value={submitBtnText} />
+        </form>
+    </div>
+    ```
+- Include the `onSubmit` handler:
+    ```jsx
+    <form onSubmit={handleLocalSubmit}>
+    ----
+    ---
+    ```
+- For get and manage the submit state:
+    ```jsx
+    const handleLocalSubmit = e =>{
+        e.preventDefault();
+        const data = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            password: e.target.password.value,
+        }
+        handleFormSubmit(data);
+    }
+    ```
+
+</details>
