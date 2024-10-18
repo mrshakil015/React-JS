@@ -1075,5 +1075,57 @@ const Home = () => {
     );
 };
 ```
+</details>
+
+<details>
+<summary> Concept of useRef()</summary>
+
+## What is useRef?
+useRef is a react hook that lets you reference a value that's not needed for rendering. useRef to create a reference to the element and access value by using like: nameRef.current.value
+
+```jsx
+const ref = useRef(initialValue)
+```
+
+### Parameters:
+InitialValue:
+- THe value we want the ref object's current property to be initially.
+- It can be value of any type.
+- This argument is ignored after the initial render.
+
+### Returns:
+- Returns an object with a single property current.
+- Initially, it's set to the initialValue we have passed. We can later set it to something else.
+- If we pass the ref object to react as a ref attribute to a JSX node, React will set its current property.
+- On the next renders, useRef will return the same object.
+
+### Pitfall
+- We can mutate the `ref.current` property. Unlike state, it is mutable.
+- When we change the `ref.current` property, React does not re-render our component.
+- In Strict Mode, React will call our component function twice in order to help us find accidental impurities. This is development-only behavior and does not affect productin. Each ref object will be created twice, but one of the versions will be discarded.
+
+## Get input field value using useRef()
+
+- At first create useRef() hook for every input field
+    ```jsx
+    import { useRef } from "react";
+    const nameRef = useRef(null);
+    ```
+- Include the useRef() inside the input field
+    ```jsx
+    <input ref={nameRef} type="text" name="name" />
+    ```
+
+## Initially set the Cursors into the first input field
+```jsx
+    useEffect(()=>{
+        nameRef.current.focus();
+    },[])
+```
+
+## Set defaultvalue into the input value
+```jsx
+<input ref={emailRef} type="email" defaultValue={'example@gmail.com'} name="email" id="" />
+```
 
 </details>

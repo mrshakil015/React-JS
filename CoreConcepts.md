@@ -10,6 +10,7 @@
 - useNavigation()
 - useLocation()
 - useLoaderData()
+- useRef()
 
 ## Forms
 - preventDefault()
