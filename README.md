@@ -1157,3 +1157,127 @@ InitialValue:
 
 </details>
 
+<details>
+<summary>Different Types of form in React</summary>
+
+## Simple Form:
+```jsx
+
+const SimpleForm = () => {
+    const handleFormSubmit = e =>{
+        e.preventDefault();
+        console.log(e.target.name.value);
+        console.log(e.target.email.value);
+        console.log(e.target.phone.value);
+        console.log('Form Submitted')
+    }
+    return (
+        <div>
+            <form onSubmit={handleFormSubmit}>
+                <input type="text" name="name" />
+                <br />
+                <input type="email" name="email" id="" />
+                <br />
+                <input type="text" name="phone" id="" />
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    );
+};
+
+export default SimpleForm;
+```
+
+## Stateful Form:
+```jsx
+import { useState } from "react";
+
+const StatefulForm = () => {
+    const [name, setName] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+
+    const handleFormSubmit = e =>{
+        e.preventDefault();
+        console.log(name)
+        console.log(email)
+        console.log(password)
+    }
+
+    const handleNameChange = e =>{
+        setName(e.target.value);
+    }
+
+    const handleEmailChange = e =>{
+        console.log(e.target.value)
+        setEmail(e.target.value);
+    }
+
+    const handlePasswordChange = e =>{
+        setPassword(e.target.value);
+    }
+
+    return (
+        <div>
+            <form onSubmit={handleFormSubmit}>
+                <input 
+                onChange={handleNameChange}
+                type="text" name="name" />
+                <br />
+                <input 
+                onChange={handleEmailChange}
+                type="email" name="email" id="" />
+                <br />
+                <input
+                onChange={handlePasswordChange}
+                type="password" name="password" id="" />
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    );
+};
+
+export default StatefulForm;
+```
+
+## Form using useRef():
+```jsx
+import { useEffect, useRef } from "react";
+
+const RefForm = () => {
+    const nameRef = useRef(null);
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
+
+    const handleFormSubmit = e =>{
+        e.preventDefault();
+        console.log(nameRef.current.value)
+        console.log(emailRef.current.value)
+        console.log(passwordRef.current.value)
+    }
+
+    useEffect(()=>{
+        nameRef.current.focus();
+    },[])
+
+    return (
+        <div>
+            <form onSubmit={handleFormSubmit}>
+                <input ref={nameRef} type="text" name="name" />
+                <br />
+                <input ref={emailRef} type="email" defaultValue={'example@gmail.com'} name="email" id="" />
+                <br />
+                <input ref={passwordRef} type="password" name="password" id="" />
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    );
+};
+
+export default RefForm;
+```
+
+</details>
