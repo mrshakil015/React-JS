@@ -1513,3 +1513,41 @@ export default MyComponent;
 - Keep context API limited to global state management only.
 
 </details>
+
+<details>
+<summary>Filter Data</summary>
+
+- At first declare `useState()`:
+    ```jsx
+    const [appliedJobs, setAppliedJobs] = useState([]);
+    const [displayJobs, setDisplayJobs] = useState([]);
+    ```
+- Initialize the filter method to apply the filter condition:
+    ```jsx
+    const handleJobFilter = filter =>{
+        if(filter === 'all'){
+            setDisplayJobs(appliedJobs);
+        }
+        else if(filter === 'remote'){
+            const remoteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Remote');
+            setDisplayJobs(remoteJobs);
+        }
+        else if(filter === 'onsite'){
+            const onsiteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Onsite')
+            setDisplayJobs(onsiteJobs)
+        }
+    }
+    ```
+- Connect to the `handler` with onclick method inside the filter dropdown.
+    ```jsx
+        <div className="dropdown">
+            <div  tabIndex={0} role="button" className="btn m-1">Filter By <IoFilterOutline></IoFilterOutline></div>
+            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                <li onClick={() => handleJobFilter('all')}><a>All</a></li>
+                <li onClick={() => handleJobFilter('remote')}><a>Remote</a></li>
+                <li onClick={() => handleJobFilter('onsite')}><a>Onsite</a></li>
+            </ul>
+        </div>
+    ```
+
+</details>
