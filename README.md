@@ -1411,3 +1411,105 @@ export default useInputState;
     ```
 
 </details>
+
+<details>
+<summary>Concept of Context API</summary>
+
+## What is it
+It call `useContext` at the top level of our component to read and subscribe to context.
+
+```jsx
+import { useContext } from 'react';
+
+function MyComponent() {
+    const theme = useContext(ThemeContext);
+    // .........
+}
+```
+
+### Parameters:
+- `SomeContext:` The context that we've previously create with createContext.
+- The context itself does not hold the information, it only represents the kind of information we can provide or read from components.
+
+### Returns:
+- `useContext` returns the context value for the calling component.
+- It is determined as the `value` passed to the closest `SomeContext.Provider` above the calling component in the tree.
+- If there is no such provider, then the returned value will be the `defaultValue` we have passed to createContext for that context.
+- The returned value is always up-to-date. React automatically re-renders components that read some context if it changes.
+
+### Usage:
+- Passing data deeply into the tree
+- Updating data passed via context 
+- Specifying a fallback default value
+- Overriding context for a part of the tree
+- Optimizing re-renders when passing objects and functions
+
+### Problem with props drilling:
+![props-drilling](./Readme-Image/props-drilling.jpg)
+
+### Solution with Context API
+![context-api](./Readme-Image/context-api.jpg)
+
+#### **Step-1:** Create a context Object
+```jsx
+// MyContext.jsx
+import { createContext } from 'react';
+
+export const MyContext = createContext("");
+```
+
+#### **Step-2:** Wrap the parent component component with provider
+```jsx
+// App.jsx
+import { useState, React } from "react";
+import { MyContext } from "./MyContext";
+import MyComponent from "./MyComponent";
+
+function App(){
+    const [text, setText] = useState("");
+
+    return (
+        <div>
+            <MyContext.Provider value = {{ text, setText }}>
+                <MyComponent ></MyComponent>
+            </MyContext.Provider>
+        </div>
+    );
+}
+
+export default App;
+```
+
+#### **Step-3:** Consume the Context
+```jsx
+// MyComponent.jsx
+import { useContext } from "react";
+import { MyContext } from "./MyContext";
+
+function MyComponent() {
+    const { text, setText } = useContext(MyComponent);
+
+    return (
+        <div>
+            <h1>{text}</h1>
+            <button onClick={() => setText('Hello, World')}> Click Me </button>
+        </div>
+    );
+}
+
+export default MyComponent;
+
+```
+
+### Use cases
+- **Theming:** Dark or light theme for our website and pass it down to all the component.
+- **User Authentication:** A user's authentication status and pass it down to all the components.
+- **Multilingual Support:** Current language of your application in the context and pass it down to all components.
+- **Accessing data from external sources:** Store data retrieved from external sources such as APIs or database and make it available to all components.
+
+### Pitfall
+- Use default initial values
+- Use a separate file to define context
+- Keep context API limited to global state management only.
+
+</details>

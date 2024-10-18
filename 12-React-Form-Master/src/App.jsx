@@ -17,15 +17,16 @@ function App() {
 
   return (
     <>
-      <h1>Simple Form</h1>
+    <h1>Form Master</h1>
+      <h2>Simple Form</h2>
       <SimpleForm></SimpleForm>
-      <h1>Stateful Form</h1>
+      <h2>Stateful Form</h2>
       <StatefulForm></StatefulForm>
-      <h1>Ref Form</h1>
+      <h2>Ref Form</h2>
       <RefForm></RefForm>
-      <h1>Custom Hook Form</h1>
+      <h2>Custom Hook Form</h2>
       <HookForm></HookForm>
-      <h1>Reusable Form</h1>
+      <h2>Reusable Form</h2>
       <ReusableForm
         formTitle={'Sign Up'}
         handleFormSubmit={handleSignUpSubmit}
