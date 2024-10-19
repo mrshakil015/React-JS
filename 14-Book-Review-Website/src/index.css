@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navbar .navbar-center ul li .active{
+    background: transparent;
+    color: #23BE0A;
+    border: 2px solid #23BE0A;
+
+}
+.navbar .navbar-center ul li :hover{
+    background: transparent;
+    color: #23BE0A;
+} 
+.navbar .navbar-start a:hover {
+    background: transparent;
+}
