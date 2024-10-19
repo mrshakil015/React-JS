@@ -19,7 +19,7 @@ const FeaturedJobs = () => {
     return (
 
         <div>
-            <div className="max-w-6xl mx-auto my-32">
+            <div className="max-w-6xl mx-auto my-32 p-4">
                 <div className="text-center space-y-4 mb-8">
                     <h2 className="text-5xl font-extrabold">Featured Jobs</h2>
                     <p className="text-[#757575]">
