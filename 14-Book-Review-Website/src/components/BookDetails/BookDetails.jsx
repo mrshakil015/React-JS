@@ -1,4 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveReadBook, saveWishlistBook } from "../../utility/localstorage";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BookDetails = () => {
     const books = useLoaderData();
@@ -7,6 +10,25 @@ const BookDetails = () => {
 
     const book = books.find(book => book.bookId === bookIdInt);
     const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = book;
+    
+    const handleReadBook = () => {
+        const alreadyAdded = saveReadBook(bookIdInt);
+        if (alreadyAdded) {
+            toast('Book is already in the Reading List');
+        } else {
+            toast('Book added to the Reading List Successfully');
+        }
+    }
+    
+    const handleWishlistBook = () => {
+        const alreadyAdded = saveWishlistBook(bookIdInt);
+        if (alreadyAdded) {
+            toast('Book is already in the Wish List');
+        } else {
+            toast('Book added to the Wish List Successfully');
+        }
+    }
+    
 
     return (
         <div className="grid grid-cols-1 px-4 md:grid-cols-2 gap-12 my-12">
@@ -54,10 +76,11 @@ const BookDetails = () => {
                 </table>
                 <hr className="my-2 border-dashed" />
                 <div className="flex gap-4 mt-4">
-                    <button className="btn bg-white px-6">Read</button>
-                    <button className="btn bg-[#59c6d2] px-6 text-white">Wishlist</button>
+                    <button onClick={handleReadBook} className="btn bg-white px-6">Read</button>
+                    <button onClick={handleWishlistBook} className="btn bg-[#59c6d2] px-6 text-white">Wishlist</button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
