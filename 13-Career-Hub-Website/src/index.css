@@ -12,3 +12,14 @@ body {
     color: white;
     font-weight: 800;
 }
+
+.navbar .navbar-center ul li :hover{
+    background: transparent;
+    color: #9873FF;
+}
+
+.navbar .navbar-center ul li .active{
+    background: transparent;
+    color: #9873FF;
+    outline: 1px solid #9873FF;
+}

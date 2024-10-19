@@ -1,6 +1,6 @@
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import bg1 from '../../assets/images/bg1.png'
-import bg2 from '../../assets/images/bg2.png'
+// import bg2 from '../../assets/images/bg2.png'
 const Breadcrumb = () => {
     const location = useLocation();
 
@@ -34,9 +34,9 @@ const Breadcrumb = () => {
             </div>
 
             {/* Second image bg2, positioned on the right */}
-            <figure className="col-start-3 col-span-1 relative -mt-[70px]">
+            {/* <figure className="col-start-3 col-span-1 relative -mt-[70px]">
                 <img className='absolute right-0' src={bg2} alt="logo" />
-            </figure>
+            </figure> */}
         </div>
 
 

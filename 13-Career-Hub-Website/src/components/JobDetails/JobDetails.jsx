@@ -3,6 +3,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobApplication } from "../../utility/localstorage";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import { CiLocationOn, CiDollar, CiPhone, CiMail, CiCalendar } from "react-icons/ci";
+import { TbHandClick } from "react-icons/tb";
 
 const JobDetails = () => {
     const jobs = useLoaderData();
@@ -11,7 +13,7 @@ const JobDetails = () => {
     const job = jobs.find(job => job.id === idInt);
     const { job_title, job_description, job_responsibility, educational_requirements, experiences, salary, contact_information } = job;
 
-    const handleApplyJob = () =>{
+    const handleApplyJob = () => {
         saveJobApplication(idInt);
         toast('You have applied successfully');
     }
@@ -33,18 +35,18 @@ const JobDetails = () => {
                     <div className="bg-[#f4f2ff] p-7 rounded-md">
                         <h2 className="text-xl font-extrabold border-b-2 border-b-gray-200 text-black pb-4">Job Details</h2>
                         <div className="space-y-2 mt-4">
-                            <p><strong>Salary: </strong>{salary}</p>
-                            <p><strong>Job Title: </strong>{job_title}</p>
+                            <p className="flex"><CiDollar className="text-2xl mr-2"></CiDollar> <strong> Salary: </strong>{salary}</p>
+                            <p className="flex"><CiCalendar className="text-2xl mr-2"></CiCalendar> <strong>Job Title: </strong>{job_title}</p>
                         </div>
                         <h2 className="text-xl font-extrabold text-black border-b-2 border-b-gray-200 py-4">Contact Information</h2>
                         <hr />
                         <div className="space-y-2 my-4">
-                            <p><strong>Phone: </strong>{contact_information.phone}</p>
-                            <p><strong>Email: </strong>{contact_information.email}</p>
-                            <p><strong>Address: </strong>{contact_information.address}</p>
+                            <p className="flex"><CiPhone className="text-2xl mr-2"></CiPhone> <strong>Phone: </strong>{contact_information.phone}</p>
+                            <p className="flex"><CiMail className="text-2xl mr-2"></CiMail> <strong>Email: </strong>{contact_information.email}</p>
+                            <p className="flex"><CiLocationOn className="text-2xl mr-2"></CiLocationOn> <strong>Address: </strong>{contact_information.address}</p>
                         </div>
                     </div>
-                    <button onClick={handleApplyJob} className="btn btn-gradient w-full mt-6">Apply Now</button>
+                    <button onClick={handleApplyJob} className="btn btn-gradient w-full mt-6">Apply Now<TbHandClick className="text-xl"></TbHandClick></button>
                 </div>
 
             </div>
