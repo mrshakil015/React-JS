@@ -91,7 +91,7 @@
 
 
 
-# Start React with Vite
+# Start React Simply with Vite
 
 + npm create vite@latest project-name -- --template react
 + for proceed press (y)
@@ -101,9 +101,78 @@ After that
 + for run --> npm run dev or npx vite
 + for build --> npm run build or npx vite build (create dist folder)
 
+# Start React with Tailwind & DaisyUI
+- Create new React app with Vite
+    ```cmd
+    npm create vite@latest name-of-your-project -- --template react
+    cd <your new project directory>
+    ```
+- Install React Router
+    ```cmd
+    npm install react-router-dom
+    ```
+- Create and render a browser router in `main.jsx`
+    ```jsx
+    // Existing code
+    import {
+        createBrowserRouter,
+        RouterProvider,
+    } from "react-router-dom";
 
-# Application Running Process:
-+ After run project: npx vite --> from main.jsx 
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <div>Hello world!</div>,
+        },
+    ]);
+    <StrictMode>
+        <RouterProvider router={router}></RouterProvider> // include router here
+    </StrictMode>,
+    ```
+- Install Tailwind
+    ```cmd
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+    ```
+- Add the paths to all of our template files in our `tailwind.config.js` file
+    ```js
+    /** @type {import('tailwindcss').Config} */
+    export default {
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+    }
+    ```
+- Add the Tailwind directives to your `index.css`
+    ```css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    ```
+- Install DaisyUI
+    ```cmd
+    npm i -D daisyui@latest
+    ```
+- Add daisyUI to `tailwind.config.js`
+    ```js
+    import daisyui from 'daisyui'
+    ...
+    ...
+    ...
+    module.exports = {
+    //...
+    plugins: [daisyui],
+    }
+    ```
+- Run our build process with:
+    ```cmd
+    npm run dev
+    ```
 
 ### Folder Structure
 + node_modules
