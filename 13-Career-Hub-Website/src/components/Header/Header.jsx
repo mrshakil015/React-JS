@@ -5,11 +5,12 @@ const Header = () => {
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/jobs">Jobs</NavLink></li>
-        <li><NavLink to="/applied">Applied Jobs</NavLink></li>
+        <li><NavLink to="/applied" state={{ title: "Applied Jobs" }}>Applied Jobs</NavLink></li>
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className=" bg-[#f4f2ff]">
+            <div className="navbar max-w-6xl mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,6 +43,7 @@ const Header = () => {
             <div className="navbar-end">
                 <a className="btn btn-gradient">Start Applying</a>
             </div>
+        </div>
         </div>
     );
 };

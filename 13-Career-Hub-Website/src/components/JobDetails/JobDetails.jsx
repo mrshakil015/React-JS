@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobApplication } from "../../utility/localstorage";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 const JobDetails = () => {
     const jobs = useLoaderData();
@@ -17,7 +18,8 @@ const JobDetails = () => {
 
     return (
         <div className="mb-10">
-            <div className="grid gap-4 md:grid-cols-5 mt-20">
+            <Breadcrumb></Breadcrumb>
+            <div className="max-w-6xl mx-auto grid gap-4 md:grid-cols-5 mt-20">
                 <div className="md:col-span-3 space-y-6 text-[#757575]">
                     <p><strong className="text-black">Job Description: </strong>{job_description}</p>
                     <p><strong className="text-black">Job Responsibilities: </strong>{job_responsibility}</p>

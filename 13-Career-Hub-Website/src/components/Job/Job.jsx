@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
     const { id,logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
+
     return (
         <div className=" p-10 bg-base-100 border-2">
             <figure className="mb-8">

@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { getStoredJobApplication } from "../../utility/localstorage";
 import AppliedJob from "../AppliedJob/AppliedJob";
 import { IoFilterOutline } from "react-icons/io5";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 const AppliedJobs = () => {
     const jobs = useLoaderData();
@@ -40,7 +41,9 @@ const AppliedJobs = () => {
     }, [jobs])
 
     return (
-        <div className="my-24">
+        <div>
+            <Breadcrumb></Breadcrumb>
+        <div className="max-w-6xl mx-auto my-24">
             <div className="dropdown">
                 <div  tabIndex={0} role="button" className="btn m-1">Filter By <IoFilterOutline></IoFilterOutline></div>
                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
@@ -54,6 +57,7 @@ const AppliedJobs = () => {
                     displayJobs.map((appliedjob, idx) => <AppliedJob key={idx} appliedjob={appliedjob}></AppliedJob>)
                 }
             </div>
+        </div>
         </div>
     );
 };
