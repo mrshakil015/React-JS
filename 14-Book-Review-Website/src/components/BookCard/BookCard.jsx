@@ -22,7 +22,7 @@ const BookCard = ({ book }) => {
                         {
                             tags.map((tag, idx) => (
                                 <button key={idx} className="bg-[#f6fff4] px-4 py-2 text-xs m-2 text-[#23BE0A] font-medium">
-                                    {tag}
+                                    #{tag}
                                 </button>
                             ))
                         }
