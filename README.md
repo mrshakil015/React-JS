@@ -1719,5 +1719,16 @@ export default Breadcrumb;
     ```
 - Enable the signin method (Google, Facebook, github etc.):
     > Build --> Authentication --> Google, Facebook, Github, etc...
-
+- Sign Out User:
+    ```js
+    import { signOut } from "firebase/auth";
+    signOut(auth)
+        .then(result => {
+            console.log(result);
+            setUser(null);
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    ```
 </details>
