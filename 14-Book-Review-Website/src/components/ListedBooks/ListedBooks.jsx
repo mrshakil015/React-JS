@@ -24,7 +24,9 @@ const ListedBooks = () => {
     }, [books]);
     return (
         <div>
-            <h2 className="text-5xl">Listed Books:{readBook.length}</h2>
+            <div className="bg-slate-50 my-5 rounded-2xl py-8">
+                <h2 className="text-3xl text-center font-bold">Books</h2>
+            </div>
             <div className="space-y-6 my-8">
                 {
                     readBook.map(book => <BookCard key={book.bookId} book={book}></BookCard>)
