@@ -24,7 +24,6 @@ const ListedBooks = () => {
             setReadBook(readBooks);
         }
     }, [books]);
-
     useEffect(() =>{
         const storedWishlistBookId = getStoredWishlistBook();
         if (books.length > 0) {
