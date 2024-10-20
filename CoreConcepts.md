@@ -22,3 +22,8 @@
 - ContextAPI
     - createContext()
     - useContext()
+
+## AUthentication
+- Okta
+- OAuth
+- Firebase

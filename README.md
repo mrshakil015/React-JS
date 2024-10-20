@@ -1674,3 +1674,27 @@ export default Breadcrumb;
 ```
 
 </details>
+
+<details>
+<summary>Firebase</summary>
+
+- Visit: Console.firebase.google.com
+- Create project (skip google analytics)
+- Register App (Create Config)
+- Install Firebase : npm install firebase
+- Add config file to the project: name - firebase.init.js
+- DANGER: DO not publish or make firebase config to public by pushing those to github
+- Visit: Go to Docs > Build > Authentication > Web > Get Started
+- Export app from the firebase.config.js file: `export default app`
+- import and create auth into Login.jsx: 
+    ```js
+    import getAuth from 'firebase/auth'
+    const auth = getAuth(app)
+    ```
+- import googleAuthProvide and create a new Provider
+    ```js
+    import {GoogleAuthProvider} from 'firebase/auth';
+    const provider = new GoogleAuthProvider();
+    ```
+
+</details>
