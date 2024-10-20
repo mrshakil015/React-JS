@@ -1,5 +1,6 @@
-import { FaUsers, FaRegCalendarAlt, FaRegStar   } from "react-icons/fa";
+import { FaUsers, FaRegCalendarAlt   } from "react-icons/fa";
 import { TbPageBreak } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const BookCard = ({ book }) => {
     const { bookId, bookName, author, image, category, totalPages, rating, tags, publisher, yearOfPublishing } = book;
@@ -39,7 +40,7 @@ const BookCard = ({ book }) => {
                     <button className="bg-[#e0eeff] flex-grow rounded-full px-4 py-2 m-2 text-[#328EFF] font-medium">Category: {category}</button>
                     <button className="bg-[#fff3e0] flex-grow rounded-full px-4 py-2 m-2 text-[#FFAC33] font-medium">Rating: {rating}</button>
                     </div>
-                    <button className="btn py-2 m-2 rounded-full bg-[#23BE0A] px-6 text-white">View Details</button>
+                    <Link to={`/book/${bookId}`}><button className="btn py-2 m-2 rounded-full bg-[#23BE0A] px-6 text-white">View Details</button></Link>
                 </div>
             </div>
         </div>
