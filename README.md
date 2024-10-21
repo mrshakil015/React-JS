@@ -1791,6 +1791,37 @@ export default Breadcrumb;
 </details>
 
 <details>
+<summary>User Registration Process</summary>
+
+### User Registration
+- Create User Registration From
+- Create a onSubmit function and include it into the `form`:
+    ```jsx
+    const handleRegister = e => {
+        e.preventDefault();
+    }
+
+    //---existing code---
+    <form onSubmit = {handleRegister}>
+    ....
+    ...
+    </form>
+    ```
+- Get the input field data:
+    ```jsx
+    const handleRegister = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        ...
+        ...
+    }
+
+    ```
+
+</details>
+
+<details>
 <summary>Interview Questions</summary>
 
 ## Firebase Related Question
