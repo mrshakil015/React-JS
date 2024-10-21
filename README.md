@@ -1678,6 +1678,8 @@ export default Breadcrumb;
 <details>
 <summary>Firebase</summary>
 
+## Initial Setup:
+
 - Visit: Console.firebase.google.com
 - Create project (skip google analytics)
 - Register App (Create Config)
@@ -1687,6 +1689,7 @@ export default Breadcrumb;
     ```
 - Add config file to the project: name - firebase.init.js:
     > DANGER: DO not publish or make firebase config to public by pushing those to github
+## Integration:
 - Visit: Go to Docs > Build > Authentication > Web > Get Started
 - Export app from the firebase.config.js file:
     ```js
@@ -1699,6 +1702,8 @@ export default Breadcrumb;
     //--existing code
     const auth = getAuth(app);
     ```
+## Provider Setup:
+### Sign-In-Method with Google Setup:
 - import googleAuthProvide and create a new Provider
     ```js
     import {GoogleAuthProvider} from 'firebase/auth';
@@ -1731,4 +1736,32 @@ export default Breadcrumb;
             console.log(error)
         })
     ```
+### Github Auth Provider
+- Enable the signin method
+    > Go to Firebase Console --> Project --> Build --> Authentication --> Github
+- Visit: github.com
+    - Click Profile Icon --> Setting --> Developer Profile
+- Create a App
+- Collect Client Id, and Client secret
+- Place client id and client secret on the firebase github provider
+- import googleAuthProvide and create a new Provider
+    ```js
+    import {GithubAuthProvider} from 'firebase/auth';
+    const provider = new GithubAuthProvider();
+    ```
+- Use `signInWithPopUP` and pass the auth and provider into the `Login.jsx` file. Include it inside the `onClick` handler function:
+    ```js
+    const handleGithubSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user
+                console.log(user);
+            })
+            .catch(error => {
+                console.log('Error: ', error.message);
+            })
+    }
+    ```
+
+
 </details>
