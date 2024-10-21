@@ -1687,7 +1687,7 @@ export default Breadcrumb;
     ```cmd
     npm install firebase
     ```
-- Add config file to the project: name - firebase.init.js:
+- Add config file to the project: name - firebase.config.js:
     > DANGER: DO not publish or make firebase config to public by pushing those to github
 ## Integration:
 - Visit: Go to Docs > Build > Authentication > Web > Get Started
@@ -1763,5 +1763,47 @@ export default Breadcrumb;
     }
     ```
 
+
+</details>
+
+<details>
+<summary>Authentication and Authorization</summary>
+
+### Authentication vs Authorization:
+
+| Authentication | Authorization |
+|----------------|----------------|
+|Determines whether users are who they claim to be| Determines what users can and cannto access|
+|Challanges the user to validate credentials (for example, through passwords, answers to security questions, of facial recognition)|Verifies whether access is allowed through policies and rules|
+|Usually done before authorization|Usually done after successful authentication|
+|It usually needs the user's login details|While it needs user's privilege or security levels|
+|Generally, transmits info through an ID token|Generally, transmits info through an access token|
+
+### Authentication Methods:
+- Security Question
+- Passwords
+- SMS, VOice, and Email OTP
+- Software OTP
+- Okta Verify Push
+- Physical and U2f Tokens
+- Biometrics-based
+
+</details>
+
+<details>
+<summary>Interview Questions</summary>
+
+## Firebase Related Question
+- What is Firebase?
+- Is firebase frontend or backend?
+- What is firebase architecture?
+- What are the features of firebase?/Whate are the tasks you can accomplish with firebase?
+- Differences between and mongodb
+- Have you ever used firebase database (real time database)?
+- Can you briefly explain the github authentication process with firebase?
+- Which method is used to sign-in the user in Firebase Email/Password authentication?
+- Authentication vs Authorization
+- Can you tell me names of 3 authentication method?
+- Which authentication methods have you ever used for your project purpose?
 
 </details>
