@@ -62,11 +62,11 @@ const HeroRegister = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <div>
+                            <div className="relative">
                                 <input type={showPassword ? "text" : "password"}
                                     name="password"
-                                    placeholder="password" className="input input-bordered" required />
-                                <span onClick={() => setShowPassword(!showPassword)}>
+                                    placeholder="password" className="input input-bordered w-full" required />
+                                <span className="absolute top-3 right-2" onClick={() => setShowPassword(!showPassword)}>
                                     {
                                         showPassword ? "Hide" : "Show"
                                     }
