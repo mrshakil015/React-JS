@@ -15,8 +15,19 @@ const HeroRegister = () => {
         console.log(email, password);
         // reset success
         setRegisterSuccess('');
-        // reset error
+        // reset error 
         setRegisterError('');
+        
+        // Password length validation
+        if(password.length < 6) {
+            setRegisterError('Password must be longer than 6 characters');
+            return;
+        }
+        // uppercase
+        else if(!/[A-Z]/.test(password)){
+            setRegisterError('Your password should have at least one uppercase characters.');
+            return;
+        }
         // create user
         createUserWithEmailAndPassword(auth, email, password)
             .then(userCredential => {
