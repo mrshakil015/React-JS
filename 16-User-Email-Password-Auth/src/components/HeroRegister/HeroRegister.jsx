@@ -6,6 +6,7 @@ const HeroRegister = () => {
 
     const [registerError, setRegisterError] = useState('');
     const [registreSuccess, setRegisterSuccess] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleHeroRegister = e => {
         e.preventDefault();
@@ -17,14 +18,14 @@ const HeroRegister = () => {
         setRegisterSuccess('');
         // reset error 
         setRegisterError('');
-        
+
         // Password length validation
-        if(password.length < 6) {
+        if (password.length < 6) {
             setRegisterError('Password must be longer than 6 characters');
             return;
         }
         // uppercase
-        else if(!/[A-Z]/.test(password)){
+        else if (!/[A-Z]/.test(password)) {
             setRegisterError('Your password should have at least one uppercase characters.');
             return;
         }
@@ -61,10 +62,20 @@ const HeroRegister = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                            <div>
+                                <input type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    placeholder="password" className="input input-bordered" required />
+                                <span onClick={() => setShowPassword(!showPassword)}>
+                                    {
+                                        showPassword ? "Hide" : "Show"
+                                    }
+                                </span>
+                            </div>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
+
                         </div>
                         <div className="form-control mt-6">
                             <button type="submit" className="btn btn-primary">Register</button>

@@ -1892,6 +1892,23 @@ export default Breadcrumb;
     setRegisterError('');
     ```
 
+### Password Show Toggle Button
+```jsx
+
+const [showPassword, setShowPassword] = useState(false);
+//....existing code
+<div>
+    <input type={showPassword ? "text" : "password"}
+        name="password"
+        placeholder="password" className="input input-bordered" required />
+    <span onClick={() => setShowPassword(!showPassword)}>
+        {
+            showPassword ? "Hide" : "Show"
+        }
+    </span>
+</div>
+```
+
 </details>
 
 
