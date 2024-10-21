@@ -1875,6 +1875,22 @@ export default Breadcrumb;
             })
     }
     ```
+### User Already Exists:
+- Create a useState():
+    ```jsx
+    const [registerError, setRegisterError] = useState('');
+    ```
+- set the error inside the `.cath()` section:
+    ```jsx
+     .catch(error => {
+            setRegisterError(error.message);
+        })
+    ```
+- Before submit the from always reset the error and set empty. Do it above the onSubmit handler function.
+    ```jsx
+    // reset error
+    setRegisterError('');
+    ```
 
 </details>
 
