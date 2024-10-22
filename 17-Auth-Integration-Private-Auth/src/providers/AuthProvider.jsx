@@ -1,10 +1,39 @@
 
 import PropTypes from 'prop-types';
-import { createContext } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import auth from './../firebase/firebase.config';
 
 export const AuthContext = createContext(null);
+
 const AuthProvider = ({children}) => {
-    const authInfo = { name: "Mr. Auth Integration"}
+    const [user, setUser] = useState(null);
+
+    const createUser = (email,password)=>{
+        return createUserWithEmailAndPassword(auth, email, password );
+    }
+
+    const signinUser = (email, passowrd)=>{
+        return signInWithEmailAndPassword(auth, email,passowrd);
+    }
+
+    const logOut = () =>{
+        return signOut(auth);
+    }
+
+    // Observe auth state change
+
+    useEffect(() =>{
+        const unSubscribe = onAuthStateChanged(auth, currentUser =>{
+            console.log('Current value of the current user ',currentUser);
+            setUser(currentUser);
+        });
+        return ()=>{
+            unSubscribe();
+        }
+    },[])
+
+    const authInfo = {user, createUser, signinUser, logOut}
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

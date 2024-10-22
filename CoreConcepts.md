@@ -34,3 +34,4 @@
 - getAuth
 - sendPasswordResetEmail
 - signInWithEmailAndPassword
+- onAuthStateChanged
