@@ -4,9 +4,10 @@ const Register = () => {
 
     const handleRegister = e =>{
         e.preventDefault();
+        const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password)
+        console.log(name, email, password)
     }
 
     return (
@@ -39,7 +40,7 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">REGISTER</button>
                         </div>
                         <p className="flex items-center">Already have an account? Go to <Link to="/login"><button className="btn btn-link">Login</button></Link></p>
                     </form>
