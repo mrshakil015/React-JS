@@ -2001,6 +2001,47 @@ const [showPassword, setShowPassword] = useState(false);
     }
     ```
 
+## Reset Email
+- Create a `useRef()` to get and send email input field.
+    ```jsx
+    const emailRef = useRef();
+    ```
+- Include this inside the form with email input field:
+    ```html
+    <input type="email"
+    placeholder="email"
+    name="email"
+    ref={emailRef}
+    className="input input-bordered" required />
+    ```
+- Create handler function:
+    ```jsx
+        const handleForgetPassword = e => {
+            const email = emailRef.current.value;
+            if(!email){
+                console.log('Please provide an email', email)
+                return;
+            }
+            else if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)){
+                console.log('Please write a valid email')
+            }
+
+            // send validation email
+            sendPasswordResetEmail(auth,email)
+            .then(()=>{
+                alert('Please check your email')
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        }
+    ```
+- Integrate with then forgot passowrd;
+    ```html
+    <label className="label">
+        <a onClick={handleForgetPassword} href="#" className="label-text-alt link link-hover">Forgot password?</a>
+    </label>
+    ```
 </details>
 
 
