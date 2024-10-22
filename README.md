@@ -1909,6 +1909,23 @@ const [showPassword, setShowPassword] = useState(false);
 </div>
 ```
 
+### Include Terms & Condition Checkbox
+- Include the checkbox field
+    ```html
+    <div>
+        <input type="checkbox" name="terms" id="" />
+        <label htmlFor="terms" className="ml-3">Accept Our <a href="">Terms and condition</a></label>
+    </div>
+
+    ```
+- Create the condition:
+    ```jsx
+    if(!accepted){
+            setRegisterError('Please accept our terms and condition');
+            return;
+        }
+    ```
+
 </details>
 
 

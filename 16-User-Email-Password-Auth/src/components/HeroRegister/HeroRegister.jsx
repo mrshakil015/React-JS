@@ -13,7 +13,8 @@ const HeroRegister = () => {
         console.log("Form submit")
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+        const accepted = e.target.terms.checked
+        console.log(email, password, accepted);
         // reset success
         setRegisterSuccess('');
         // reset error 
@@ -27,6 +28,11 @@ const HeroRegister = () => {
         // uppercase
         else if (!/[A-Z]/.test(password)) {
             setRegisterError('Your password should have at least one uppercase characters.');
+            return;
+        }
+        // terms & condition button
+        else if(!accepted){
+            setRegisterError('Please accept our terms and condition');
             return;
         }
         // create user
@@ -75,6 +81,11 @@ const HeroRegister = () => {
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
+
+                        </div>
+                        <div>
+                            <input type="checkbox" name="terms" id="" />
+                            <label htmlFor="terms" className="ml-3">Accept Our <a href="">Terms and condition</a></label>
 
                         </div>
                         <div className="form-control mt-6">
