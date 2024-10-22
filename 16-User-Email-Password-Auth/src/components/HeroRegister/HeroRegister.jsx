@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -41,6 +41,12 @@ const HeroRegister = () => {
             .then(userCredential => {
                 console.log(userCredential.user)
                 setRegisterSuccess('User Created Successfully.')
+
+                // send verificatione email:
+                sendEmailVerification(userCredential.user)
+                .then(()=>{
+                    alert('Please check your email and verify your account.')
+                });
             })
             .catch(error => {
                 console.error(error);

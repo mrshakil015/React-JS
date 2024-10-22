@@ -2042,6 +2042,15 @@ const [showPassword, setShowPassword] = useState(false);
         <a onClick={handleForgetPassword} href="#" className="label-text-alt link link-hover">Forgot password?</a>
     </label>
     ```
+
+## Send a user a verification email
+```jsx
+ // send verificatione email:
+sendEmailVerification(userCredential.user)
+.then(()=>{
+    alert('Please check your email and verify your account.')
+});
+```
 </details>
 
 
