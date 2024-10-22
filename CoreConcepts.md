@@ -27,3 +27,10 @@
 - Okta
 - OAuth
 - Firebase
+
+## Firebase
+- createUserWithEmailAndPassword
+- sendEmailVerification
+- getAuth
+- sendPasswordResetEmail
+- signInWithEmailAndPassword
