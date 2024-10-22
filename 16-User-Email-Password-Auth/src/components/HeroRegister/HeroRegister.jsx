@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const HeroRegister = () => {
 
@@ -91,6 +92,7 @@ const HeroRegister = () => {
                         <div className="form-control mt-6">
                             <button type="submit" className="btn btn-primary">Register</button>
                         </div>
+                        <p> Already have an account? Go to <Link to="/login">Login</Link></p>
                         {
                             registerError && <p className="text-red-700">{registerError}</p>
                         }

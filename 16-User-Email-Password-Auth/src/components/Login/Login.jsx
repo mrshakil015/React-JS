@@ -1,5 +1,6 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -12,6 +13,9 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password)
+
+        setShowError('')
+        setShowSuccess('')
 
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
@@ -55,6 +59,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                        <p> Don't have any account? Please <Link to="/heroRegister">Register</Link></p>
                         {
                         showError && <p className="text-red-600">{showError}</p>
                         }
