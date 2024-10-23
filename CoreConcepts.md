@@ -23,7 +23,7 @@
     - createContext()
     - useContext()
 
-## AUthentication
+## Authentication
 - Okta
 - OAuth
 - Firebase

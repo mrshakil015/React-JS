@@ -2083,6 +2083,35 @@ sendEmailVerification(userCredential.user)
 ```
 </details>
 
+<details>
+<summary>Private Route</summary>
+ 
+ Private Route is a route that is accessible only to authenticated users. If a user is not authenticated, they are typically redirected to a login page or another specified route. This is commonly used in applications where some parts of the application should only be accessible after the user logs in (e.g., user dashboards, profile pages).
+ - Create `PrivateRoute` components, that checks if the user is authenticated.
+    ```jsx
+    import { useContext } from "react";
+    import { AuthContext } from "../providers/AuthProvider";
+    import { Navigate } from "react-router-dom";
+
+    const PrivateRoute = ({ children }) => {
+        const { user } = useContext(AuthContext)
+        if(user){
+            return children;
+        }
+        return <Navigate to="/login"></Navigate>
+    };
+
+    export default PrivateRoute;
+    ```
+- Define it into the path section:
+    ```jsx
+    {
+          path: '/orders',
+          element: <PrivateRoute><Orders></Orders></PrivateRoute>
+    }
+    ```
+
+</details>
 
 <details>
 <summary>Interview Questions</summary>
