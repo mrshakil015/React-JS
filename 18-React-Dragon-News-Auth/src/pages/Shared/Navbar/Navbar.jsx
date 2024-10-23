@@ -49,7 +49,7 @@ const Navbar = () => {
                                 src={userPic} />
                         </div>
                     </div>
-                    <Link>
+                    <Link to="/login">
                         <button className="btn">Login</button>
                     </Link>
 
