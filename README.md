@@ -1585,6 +1585,7 @@ export default MyComponent;
 
 <details>
 <summary>Create Auth Provider using `createContext()`</summary>
+
  1. create context and export it
  2. set provider with value
  3. use the Auth provider in the main.jsx file
@@ -1611,7 +1612,7 @@ AuthProvider.propTypes = {
 }
  ```
 
-</deatails>
+</details>
 
 <details>
 <summary>Filter Data</summary>
