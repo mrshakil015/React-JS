@@ -1709,6 +1709,67 @@ export default Breadcrumb;
 <details>
 <summary>Firebase</summary>
 
+### What is Firebase?
+- A product of google
+- Helps developers to build apps faster and securely.
+- No programming is required on the firebase side which makes it easy to use its features more efficiently
+- Provides services to android, ios, web, and unity. It provides cloud storage.
+- Uses NoSQL for the database for the storage of data.
+
+### Firebase SDK
+- The SKDs provided by Firebase, directly interact with backend services.
+- There is no need to establish any connection between the app and the service.
+- If we're using one of the Firebase database options. We typically write code to query the database in our client app.
+- The traditional app development process requires writing both frontend and backend software. The frontend code just implements the API endpoints exposed by the backend, and the backend code actually does the work.
+- With Firebase products, the traditional backend is bypassed, putting the work into the client.
+- Serverless architecture
+
+### Firebase Authentication
+- Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to us app.
+- It supports authentication using passwords, phone number, popular rederated identity providers like Google, Facebook and Twitter, and more.
+- Firebase Authentication integrates tightly with other Firebase services, and it leverages industry standards like OAuth 2.0
+- OAuth, which stans for "Open Authorization", is a standard designed to allow a website or application to access resources hosted by other web apps on behalf of a user.
+- OAuth 2.0 provides consented access and restricts actions of what the client app can perform on resources on behalf of the user, without ever sharing the user's credentials.
+
+### Internal Mechanism of Firebase Authentication
+Once a user authenticates, 3 things happen:
+1. Information about the user is returned to the application via callbacks to allow us to personalize our app's user experience for the specific user.
+2. The user information contains a unique ID which is guaranteed to be unique distinct across all providers.
+3. This unique ID is used to identify the user and what parts of the backend system they are authorized to access. 
+
+### Some Firebase Reference
+- **initialize()**- Creates and initializes a FirebaseApp instance.
+- **FIrebaseApp()**- A FirebaseApp holds the initialization information for a collection of services.
+- **getAuth(app)**- Returns the Auth instance associated with the provided FirebaseApp. If no instance exists, initializes an Auth instance with platform-specific default dependencies.
+- **OAuth Provider**- Provider for generating generic OAuthCredentical.
+- **OAuthCredentical**- specify the details about each auth provider's credential requirements.
+
+### Why use an OAuth Provider?
+As we make an app that access a solid web based back-end it's important to consider the following aspects of web security:
+- Requiring strong passwords.
+- The use of strong encryption.
+- Ensuring secure communication (between client and server).
+- Securing password storage within an encrypted database.
+- Implementing password recovery. (Which also has to be secure).
+- Adding 2 factor authentication . (Highly recomended extra layer of security)
+- Including protection against man in the middle attacks.
+
+### Principles of OAuth 2.0
+- OAuth 2.0 is an authorization protocol and NOT and authentication protocol.
+- Authentication verifies the identity of a user or service, and authorization determines their access rights.
+- OAuth 2.0 is designed primarily as a means of granting access to a set of resources, for example, remote APIs or user's data.
+- OAuth 2.0 uses Access Tokens. An Access Token is a piece of data that represents the authorization to access resources on behalf of the end-user.
+- The OAuth 2.0 authorization framework contains authorization server.
+- Authorization Server - receies request from the Client for Access Tokens and issues them upon successful authentication and consent by the Resource Owner(the user or system that owns the protected resources and can grant access to them.) The authorization server exposes two endpoints: the Authorization endpoint, which handles the interactive authentication and consent of the user, and the TOken endpoint, which is involved in a machine to machine interaction.
+
+### How OAuth 2.0 Works?
+- The client requests authorization (authorization request) from the Authorization server, supplying the client id and secret to as identification; it also provides the scopes and an endpoint URI(redirect URI) to send the access token or the authorization code to.
+- The Authorization server authenticates the client and verifies that the requested scopes are permitted.
+- The Resource owner interacts with the Authorization server to grant access.
+- The Authorization server redirects back to the client with either an Authorization code or Access token, depending on the grant type.
+- With the access token, the client requests access to the resource from the resource server.
+
+
 ## Initial Setup:
 
 - Visit: Console.firebase.google.com
