@@ -2111,6 +2111,32 @@ sendEmailVerification(userCredential.user)
     }
     ```
 
+
+</details>
+
+<details>
+<summary>Dynamic Route Visibility</summary>
+
+```jsx
+    const navLinks = <>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/login">Login</NavLink></li>
+        <li><NavLink to="/register">Register</NavLink></li>
+        <li><NavLink to="/orders">Orders</NavLink></li>
+        {isAuthenticated && <>
+            <li><NavLink>Dashboard</NavLink></li>
+            <li><NavLink>Profile</NavLink></li>
+
+        </>}
+    </>
+```
+
+```jsx
+{
+    path: '/orders',
+    element: <PrivateRoute><Profile></Profile></PrivateRoute>
+}
+```
 </details>
 
 <details>
