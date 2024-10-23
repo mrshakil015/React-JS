@@ -6,7 +6,11 @@ const Register = () => {
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget)
-        console.log(form.get('email'))
+        const name= form.get('name');
+        const photoUrl = form.get('photoUrl');
+        const email = form.get('email');
+        const password = form.get('password')
+        console.log(name, photoUrl, email, password)
     }
     return (
         <div>
@@ -19,7 +23,7 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" name="Name" placeholder="Name" className="input input-bordered" required />
+                        <input type="text" name="name" placeholder="Name" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -43,7 +47,7 @@ const Register = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                        <button className="btn btn-primary">Register</button>
                     </div>
                     <p className="text-center mt-4">Already have an account. <Link className="text-red-600 underline" to="/login">Login</Link> </p>
                 </form>
