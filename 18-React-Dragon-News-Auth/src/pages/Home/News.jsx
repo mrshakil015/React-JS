@@ -1,4 +1,5 @@
 import { FaBookmark, FaEye, FaShareAlt, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const News = ({ news }) => {
     const { id, category_id, title, details, total_view, rating, author, image_url } = news
@@ -21,7 +22,13 @@ const News = ({ news }) => {
             <div className="p-5">
                 <h2 className="text-xl font-bold ">{title}</h2>
                 <img className="my-5" src={image_url} alt="" />
-                <p>{details}</p>
+                {
+                    details.length > 200
+                        ? <p>{details.slice(0, 200)}<Link
+                            to={`/news/${id}`}
+                            className="ml-3 text-red-500 font-bold">Read More...</Link></p>
+                        : <p>{details}</p>
+                }
             </div>
             <hr />
 
