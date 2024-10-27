@@ -14,7 +14,7 @@ const Home = () => {
         >
             <div className="max-w-7xl mx-auto">
                 <Navbar />
-                <div className="col-span-3 carousel w-full">
+                <div className="col-span-3 carousel w-full mt-20">
 
                     <div id="slide1" className="carousel-item relative w-full">
                         <div className="hero text-white">
@@ -24,9 +24,17 @@ const Home = () => {
                                     <p className="py-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et itaque ullam odit, tenetur veritatis ipsum ad perferendis inventore perspiciatis quas.</p>
                                     <button className="btn bg-[#F9A51A] border-none px-7">Booking</button>
                                 </div>
-                                <img
+                               <div className="flex flex-row gap-5">
+                               <img
                                     src={sajek}
-                                    className="col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                    className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                     <img
+                                    src={sreemangal}
+                                    className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                     <img
+                                    src={sundorbon}
+                                    className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                               </div>
                             </div>
                         </div>
                         <div className="absolute left-0 right-3/4 bottom-3/4 flex -translate-y-1/2 transform justify-between">
@@ -45,7 +53,7 @@ const Home = () => {
                                 </div>
                                 <img
                                     src={sreemangal}
-                                    className="col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                    className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
                             </div>
                         </div>
                         <div className="absolute left-0 right-3/4 bottom-3/4 flex -translate-y-1/2 transform justify-between">
@@ -64,7 +72,7 @@ const Home = () => {
                                 </div>
                                 <img
                                     src={sundorbon}
-                                    className="col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                    className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
                             </div>
                         </div>
                         <div className="absolute left-0 right-3/4 bottom-3/4 flex -translate-y-1/2 transform justify-between">
