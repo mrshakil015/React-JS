@@ -2201,6 +2201,8 @@ sendEmailVerification(userCredential.user)
 ```
 </details>
 
+
+
 <details>
 <summary>Interview Questions</summary>
 
@@ -2209,7 +2211,7 @@ sendEmailVerification(userCredential.user)
 - Is firebase frontend or backend?
 - What is firebase architecture?
 - What are the features of firebase?/Whate are the tasks you can accomplish with firebase?
-- Differences between and mongodb
+- Differences between firebase and mongodb
 - Have you ever used firebase database (real time database)?
 - Can you briefly explain the github authentication process with firebase?
 - Which method is used to sign-in the user in Firebase Email/Password authentication?
