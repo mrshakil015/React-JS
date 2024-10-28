@@ -24,17 +24,17 @@ const Home = () => {
                                     <p className="py-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et itaque ullam odit, tenetur veritatis ipsum ad perferendis inventore perspiciatis quas.</p>
                                     <button className="btn bg-[#F9A51A] border-none px-7">Booking</button>
                                 </div>
-                               <div className="flex flex-row gap-5">
-                               <img
-                                    src={sajek}
-                                    className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
-                                     <img
-                                    src={sreemangal}
-                                    className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
-                                     <img
-                                    src={sundorbon}
-                                    className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
-                               </div>
+                                <div className="flex flex-row gap-5">
+                                    <img
+                                        src={sajek}
+                                        className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                    <img
+                                        src={sreemangal}
+                                        className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                    <img
+                                        src={sundorbon}
+                                        className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                </div>
                             </div>
                         </div>
                         <div className="absolute left-0 right-3/4 bottom-3/4 flex -translate-y-1/2 transform justify-between">
@@ -43,19 +43,22 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div id="slide2" className="carousel-item relative w-full">
-                        <div className="hero text-white">
-                            <div className="hero-content grid grid-cols-5 ">
-                                <div className="col-span-2">
+                    <div id="slide2" className="carousel-item relative w-full ">
+                       
+                            <div className="flex flex-row items-center text-white w-full">
+                                <div className="pr-20">
                                     <h1 className="text-6xl font-extrabold">SREEMANGAL</h1>
                                     <p className="py-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero nostrum vitae minima velit placeat, omnis accusantium voluptatum excepturi fugit id?</p>
                                     <button className="btn bg-[#F9A51A] border-none px-7">Booking</button>
                                 </div>
-                                <img
-                                    src={sreemangal}
-                                    className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                <div className="relative flex-grow text-center">
+                                    <img
+                                        src={sreemangal}
+                                        className="h-[600px] col-span-3 rounded-full shadow-2xl border-8 border-[#F9A51A]" />
+                                    <span className="absolute bottom-1/2 right-2/4 m-0 p-0">Sreemangal</span>
+                                </div>
                             </div>
-                        </div>
+                        
                         <div className="absolute left-0 right-3/4 bottom-3/4 flex -translate-y-1/2 transform justify-between">
                             <a href="#slide1" className="btn btn-circle">❮</a>
                             <a href="#slide3" className="btn btn-circle">❯</a>
